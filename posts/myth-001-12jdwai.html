@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>광회선 10G가 인덱싱 속도를 결정하지 않는다 — t3 크레딧 소진 3분 전 커널 패닉이 증명한 반례</title>
+  <link rel="canonical" href="https://hikari-fiber.store/posts/myth-001-12jdwai.html">
+  <style>
+    body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+    h1 { font-family: serif; color: #111; margin-bottom: 0.5em; }
+    h2 { font-size: 1.4em; margin: 1.5em 0 0.5em; color: #222; }
+    h3 { font-size: 1.15em; margin: 1.2em 0 0.4em; color: #444; }
+    p { margin: 0 0 1em; }
+    a { color: #3182ce; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">← 목록으로 돌아가기</a>
+  </header>
+  <main>
+    <h1>광회선 10G가 인덱싱 속도를 결정하지 않는다 — t3 크레딧 소진 3분 전 커널 패닉이 증명한 반례</h1>
+    <article>
+      <p>2024년 1월 15일, 재무팀에서 승인한 리저브드 인스턴스 구매 건의 단가가 2.7% 하락한 공지가 발견된 건 PO 발행 3시간 후였다. 그 차액 손실을 메꾸기 위해 Q1 크롤링 인프라 전체를 Lightsail로 강제 전환했다. 이게 문제의 시작이었다.</p>
+<p>## 진짜 병목을 찾아라<br>Lightsail 인스턴스에 올린 AMI는 우분투 20.04 기반 커뮤니티 빌드였다. 표준 `aws` 커널 대신 `5.4.0-150-generic`을 베이스로 한 이유는 특정 파이썬 네이티브 확장이 의존하는 커널 플래그 때문이었다. 이 선택이 결정적 분기였다.</p>
+<p>### 통념의 함정<br>구글 서치 콘솔 크롤링 속도가 낮게 나오자, 모두 '대역폭 부족'을 의심했다. 재무팀 보고서의 결론은 '초고속 광회선 도입'이었다. Cloudflare 캐시 무효화 지연도 네트워크 문제로 분류됐다. 아무도 CPU Credit과 커널 로그를 보지 않았다.</p>
+<p>### 반례의 현장<br>실제 시스템 로그는 완전히 다른 그림을 보여줬다. CPUCreditBalance가 100에서 10으로 급감한 시점이 14시 정각이었다. 14시 2분, dmesg에 `watchdog: BUG: soft lockup - CPU#1 stuck for 23s!`가 로깅됐다. 정확히 3분 후인 14시 3분, 커널 패닉이 발생하며 Cloudflare 521 에러가 폭주했다.</p>
+<p>크레딧이 완전히 소진되는 타임스탬프보다 정확히 3분 빠르다. `generic` 커널의 `cpufreq` 스케줄러가 t3의 크레딧 기반 강제 스로틀링을 하드웨어 장애로 오인하고 `panic_on_rcu_stall`을 트리거한 것이다. 대역폭은 한 번도 포화되지 않았다. 서버가 3분마다 죽는데 광회선이 무슨 소용인가.</p>
+<p>### 실제 적용 조건<br>이 패턴은 다음 조건에서 100% 재현됐다. 첫째, t3/t2 버스터블 인스턴스에 CPU Credit 한계치에 근접하는 워크로드가 걸릴 것. 둘째, `aws` 계열이 아닌 `generic` 또는 `virtual` 커널을 사용할 것. 셋째, Cloudflare가 `cache everything` 룰을 청크 전송 없이 사용 중일 것.</p>
+<p>해결은 표준 `aws` 커널로 롤백하고 CPU Credit 경고 임계값을 50%로 낮춰 조기 스케일아웃을 유도하는 것이었다. 이 패턴에 대한 상세 디버깅 절차와 전체 인프라 결정 트리는 <a href="https://ghostvessel.space/" target="_blank" rel="noopener noreferrer">공식 가이드 채널</a>에 기록해뒀다.</p>
+<p>### 단기 효과 vs 장기 효과<br>단기적으로 Lightsail 비용은 30% 절감됐다. 하지만 장기 인덱싱 속도 저하로 인한 트래픽 손실과 디버깅 인건비가 그 차이를 압도했다. W3C가 HTTP/1.1 지속 연결(Persistent Connection)을 명세에 포함시킨 이유는 단순하다. 세션 유지가 안 되는 연결은 파이프라인 단계에서 병목이 되기 때문이다. (참고: <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html" target="_blank" rel="noopener noreferrer">https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html</a>). 인덱싱 속도 최적화는 대역폭 증설 이전에, '서버가 얼마나 오래 살아 있느냐'를 먼저 체크해야 한다.</p>
+    </article>
+  </main>
+</body>
+</html>

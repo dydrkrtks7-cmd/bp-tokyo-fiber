@@ -5,8 +5,8 @@
   <link>https://hikari-fiber.store</link>
   <description><![CDATA[크롤 가속화 - 구글 인덱싱 속도 초고속 광회선 대역폭 최적화 관련 최신 소식 및 가이드]]></description>
   <language>ko</language>
-  <pubDate>Tue, 09 Jun 2026 06:22:19 GMT</pubDate>
-  <lastBuildDate>Tue, 09 Jun 2026 06:22:19 GMT</lastBuildDate>
+  <pubDate>Thu, 09 Jul 2026 00:36:31 GMT</pubDate>
+  <lastBuildDate>Thu, 09 Jul 2026 00:36:31 GMT</lastBuildDate>
   <atom:link href="https://hikari-fiber.store/feed.xml" rel="self" type="application/rss+xml" />
   
     <item>
@@ -29,6 +29,13 @@
       <guid isPermaLink="true">https://hikari-fiber.store/posts/major_compare-004-1anwiso.html</guid>
       <description><![CDATA[Thinking Process: 1. **Analyze the Request:** * **Role:** Elite, Explanatory, Efficiency-obsessed Blogger (Geek Persona). Confident, slightly arrogant]]></description>
       <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[광회선 10G가 인덱싱 속도를 결정하지 않는다 — t3 크레딧 소진 3분 전 커널 패닉이 증명한 반례]]></title>
+      <link>https://hikari-fiber.store/posts/myth-001-12jdwai.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-001-12jdwai.html</guid>
+      <description><![CDATA[2024년 1월 15일, 재무팀에서 승인한 리저브드 인스턴스 구매 건의 단가가 2.7% 하락한 공지가 발견된 건 PO 발행 3시간 후였다. 그 차액 손실을 메꾸기 위해 Q1 크롤링 인프라 전체를 Lightsail로 강제 전환했다. 이게 문제의 시작이었다. ## 진짜 병]]></description>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title><![CDATA[300 만 원 키보드 고철화 사례, Cherry MX 독일 로트 오버레이와 데이터 입력 왜곡]]></title>
