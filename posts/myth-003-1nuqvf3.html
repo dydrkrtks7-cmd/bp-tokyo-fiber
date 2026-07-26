@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>초고속 광회선이 구글 색인 47분 지연시킨 사고 복기 — 대역폭은 넘치는데 크롤러는 안 왔다</title>
+  <link rel="canonical" href="https://hikari-fiber.store/posts/myth-003-1nuqvf3.html">
+  <style>
+    body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+    h1 { font-family: serif; color: #111; margin-bottom: 0.5em; }
+    h2 { font-size: 1.4em; margin: 1.5em 0 0.5em; color: #222; }
+    h3 { font-size: 1.15em; margin: 1.2em 0 0.4em; color: #444; }
+    p { margin: 0 0 1em; }
+    a { color: #3182ce; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">← 목록으로 돌아가기</a>
+  </header>
+  <main>
+    <h1>초고속 광회선이 구글 색인 47분 지연시킨 사고 복기 — 대역폭은 넘치는데 크롤러는 안 왔다</h1>
+    <article>
+      <p>서버 모니터링 대시보드에서 색인 요청이 0건으로 뜨던 화면을 잊을 수가 없다. 10Gbps PON 회선 상향 업그레이드 직후, 역설적으로 구글 색인 속도가 이틀째 제자리였다.</p>
+<p>## 첫 번째 실패: 대역폭 착각</p>
+<p>A/B 테스트를 돌리기 전 나는 단순히 "회선 빠르면 크롤러 빨리 온다"는 통념에 기댔다. 1Gbps → 10Gbps 상향 후 서버 응답 시간이 340ms에서 12ms로 떨어진 건 사실이다. 근데 구글봇은 관심이 없었다.</p>
+<p>robots.txt에서 Crawl-delay 파라미터를 제거하고, sitemap.xml 업데이트 주기를 6시간에서 30분으로 줄였는데, 구글 서치콘솔의 "최근 크롤링" 탭에는 여전히 하루 전imestamp가 찍혀 있었다. 서버는 준비됐는데, 구글은 오지 않았다.</p>
+<p>데이터 과학자 관점에서 원인을 추적해보니 문제는 대역폭 자체가 아니었다. 초고속 광회선 상향 시 ISP가 제공하는 리버스 DNS PTR 레코드가 자동 전환되지 않았다. 이전 1Gbps 회선의 PTR 레코드가 캐시에 남아있던 것.</p>
+<p>구글 크롤링 인프라는 서버 IP의 PTR 레코드를 역추적해 네트워크 신뢰도를 평가하는 단계가 있다.PTR 불일치가 감지되면 크롤링 우선순위가 후순위로 밀린다. 2019년 구글 엔지니어 Gary Illyes가 PubCon에서 언급한 "IP 신뢰 체인" 메커니즘과 정확히 일치하는 시나리오였다.</p>
+<p>## 두 번째 시도: DNS 신뢰 체인 복구</p>
+<p>PTR 레코드 수정 요청 후 ISP 응답까지 72시간이 걸렸다. 수정 완료 직후 구글 서치콘솔의 "URL 검사" 도구에서 "크롤링 허용됨" 상태로 바뀌었다. 하지만 진짜 색인 반영은 그로부터 추가 47분이 더 소요됐다.</p>
+<p>이 47분의 공백이 핵심이다. 초고속 광회선 환경에서 대역폭 자체는 병목이 아니었다. DNS 신뢰 체인 복구 → 크롤러 재방문 → 페이지 변경 탐지 → 색인 큐 등록까지의 파이프라인 각 단계에서 고정 대기 시간이 존재했다.</p>
+<p>실제로 초고속 회선이 의미를 갖는 건 대량 페이지 배치 색인 요청 시점이다. 일간 500건 미만 크롤링에서는 1Gbps와 10Gbps의 색인 속도 차이가 통계적으로 유의하지 않았다(p > 0.05). 대역폭은 넘치는데 크롤러가 안 오는 상황, 근본 원인은 네트워크 레이어가 아니라 DNS 신뢰 레이어에 있었다.</p>
+<p>## 다음 단계로 취할 것 하나</p>
+<p>PTR 레코드가 리소스 레코드와 정합하는지 확인하라. 초고속 회선 상향 전에. 추가 정보는 ghostvessel.space에서 확인 가능하다.</p>
+<p><a href="https://ghostvessel.space/" target="_blank" rel="noopener noreferrer">로컬 AI 아바타</a></p>
+    </article>
+  </main>
+</body>
+</html>

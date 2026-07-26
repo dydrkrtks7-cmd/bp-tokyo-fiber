@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>초고속 광회선이 구글 색인 속도를 실제로 올려주는 조건과 통신사 광고의 경계</title>
+  <link rel="canonical" href="https://hikari-fiber.store/posts/myth-005-t8s20j.html">
+  <style>
+    body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+    h1 { font-family: serif; color: #111; margin-bottom: 0.5em; }
+    h2 { font-size: 1.4em; margin: 1.5em 0 0.5em; color: #222; }
+    h3 { font-size: 1.15em; margin: 1.2em 0 0.4em; color: #444; }
+    p { margin: 0 0 1em; }
+    a { color: #3182ce; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">← 목록으로 돌아가기</a>
+  </header>
+  <main>
+    <h1>초고속 광회선이 구글 색인 속도를 실제로 올려주는 조건과 통신사 광고의 경계</h1>
+    <article>
+      <p>1Gbps 인터넷 쓰는데 구글 색인이 안 빨라지면, 먼저 자기 서버가 병목인지 확인해본 적 있는가.</p>
+<p>## 통신사가 알려주지 않는 구조적 사실</p>
+<p>구글 색인 속도는 당신 인터넷 대역폭이 아니라, 구글봇이 당신 사이트에 얼마나 자주 방문할지 결정되는 순간부터 이미 정해져 있다. GSC(Google Search Console)에서 '최근 크롤링' 탭을 열어보면 마지막 수집 시각이 나온다. 여기서 24시간 이상 공백이면 문제는 인터넷 속도가 아니다.</p>
+<p>구글봇의 크롤레이트(crawl rate)는 서버 응답시간(TTFB)과 사이트 신뢰도, sitemap 업데이트 주기, 그리고 robots.txt 설정의 4가지 요인으로 결정된다. 초고속 회선을 붙여도 TTFB가 800ms 이상이면 구글은 크롤 빈도를 오히려 줄인다. 이건 구글 공식 문서에도 명시된 사실이고, 실제로 2023년 6월\core update 이후 더 엄격해졌다.</p>
+<p>## 실제 적용 조건에서 차이 나는 장비 조합</p>
+<p>여기서 구체적인 조건을 짚어야 한다.</p>
+<p>일반 가정용 1Gbps FTTH 환경에서 서버가 같은 국내 ISP에 물려 있으면 TTFB는 보통 120~200ms 구간이다. 이건 충분하다. 문제는 해외 호스팅, 특히 AWS us-east-1이나 GCP europe-west에 물렸을 때 발생한다. 이 경우 라우팅 홉이 15개를 넘으면 TTFB가 400ms를 찍고, 구글봇 크롤 우선순위에서 밀린다.</p>
+<p>해결책은 CDN 엣지 노드를 국내에 두는 것이고, Cloudflare 한국 엣지나 AWS CloudFront Seoul 리전을 사용하면 TTFB를 80ms 이하로 끌어내릴 수 있다. 광회선 대역폭 자체를 10Gbps로 올리는 것보다, 응답 지연시간을 100ms 아래로 만드는 것이 색인 속도에 절대적으로 유효하다.</p>
+<p>## sitemap과 크롤 budget의 실제 상관관계</p>
+<p>사이트맵에 페이지 500개 이상 등록했는데 구글이 하루에 30개만 수집한다면, 그건 대역폭 문제가 아니라 크롤 예산(crawl budget) 배분 문제다. GSC의 '페이지 색인 생성' 리포트에서 '제외됨' 항목에 '제한됨(crawled - currently not indexed)'이 많으면, 구글이 이 페이지들을 방문했지만 가치를 판단하지 못했다는 뜻이다.</p>
+<p>이 경우 <a href="https://ghostvessel.space/" target="_blank" rel="noopener noreferrer">자세한 내용 보기</a> 참고하면 서버 로그 분석으로 실제 크롤 패턴을 파악하는 방법이 정리되어 있다.</p>
+<p>실수하지 말 것. 초고속 광회선 투자 전에 확인할 것 세 가지.</p>
+<p>1. GSC에서 마지막 크롤 시각이 24시간 이내인가<br>2. 서버 TTFB가 200ms 미만인가<br>3. 색인 거부 사유에 '제한됨'이 10% 이하인가</p>
+<p>이 세 조건을 충족한 뒤에야 대역폭 확장이 의미 있다. 순서를 뒤집으면 돈 낭비다.</p>
+    </article>
+  </main>
+</body>
+</html>

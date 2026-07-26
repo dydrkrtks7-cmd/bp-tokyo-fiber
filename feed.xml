@@ -5,10 +5,24 @@
   <link>https://hikari-fiber.store</link>
   <description><![CDATA[크롤 가속화 - 구글 인덱싱 속도 초고속 광회선 대역폭 최적화 관련 최신 소식 및 가이드]]></description>
   <language>ko</language>
-  <pubDate>Thu, 09 Jul 2026 00:36:31 GMT</pubDate>
-  <lastBuildDate>Thu, 09 Jul 2026 00:36:31 GMT</lastBuildDate>
+  <pubDate>Sun, 26 Jul 2026 06:09:37 GMT</pubDate>
+  <lastBuildDate>Sun, 26 Jul 2026 06:09:37 GMT</lastBuildDate>
   <atom:link href="https://hikari-fiber.store/feed.xml" rel="self" type="application/rss+xml" />
   
+    <item>
+      <title><![CDATA[데이터 광부가 꺼내놓은 절단된 무기 모델 3종의 원래 기획 의도]]></title>
+      <link>https://hikari-fiber.store/posts/field_note-002-1eeoeun.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/field_note-002-1eeoeun.html</guid>
+      <description><![CDATA[버려진 무기 모델의 애니메이션은 왜 보스의 리듬과 완전히 동떨어져 있었을까. 이건 작년 말, 1.10 패치 직전에 작업한 프로젝트에서 겪은 일이다. 데이터 툴로 모델 파일을 뒤지다 보니, 텍스처도 애니메이션도 완성된 미사용 보스 3종의 무기 모델이 나왔다. 문제는 그 ]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[초고속 광회선은 인덱싱 속도를 보장하지 않는다 — DNS 설정 오차 3가지와 홍대 폐업 현장의 공통점]]></title>
+      <link>https://hikari-fiber.store/posts/field_note-002-cfvnpg.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/field_note-002-cfvnpg.html</guid>
+      <description><![CDATA[2023년 봄, 홍대입구역 9번 출구에서 합정 방향으로 150미터. 커튼이 반쯤 내려진 스시야 유리창 안으로 비치던 자리는 그때 이미 텅 비어 있었다. 2년 전 이 맛집 쓴 블로그 포스트가 아직 네이버 상위에 올라와 있는 거 봤을 때, 솔직히 좀 씁쓸하더라고. ## 관]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[Created Title]]></title>
       <link>https://hikari-fiber.store/posts/field_note-003-1anwiso.html</link>
@@ -17,18 +31,88 @@
       <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
+      <title><![CDATA[구글 인덱싱 속도와 크롤링 간격이 판올림 데이터 분석에 미치는 영향]]></title>
+      <link>https://hikari-fiber.store/posts/field_note-005-13jehhc.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/field_note-005-13jehhc.html</guid>
+      <description><![CDATA[2012년 8월 스팀에 올라온 다크소울 Prepare to Die 에디션 데모, 언데드 버그 섹션의 헬케이트 드레이크 다리 통과 시점. 데모 빌드와 정식 출시 버전의 적 배치 차이를 기록하려면 원본 데이터의 타임스탬프가 중요하다. 이 글은 그 기록 과정에서 드러난 구조]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[박스지 한 장이 리셀가 40%를 좌우할 때 — 2003 파리 덩크 OG vs 레트로의 미시적 차이]]></title>
+      <link>https://hikari-fiber.store/posts/field_note-005-n64vcd.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/field_note-005-n64vcd.html</guid>
+      <description><![CDATA[2021년 봄, 필라德尔피아 경매장 뒷방. 2003 OG SB Dunk Low Paris 한 켤레가 박스 모서리 1.5cm 눌림 하나로 감정가 대비 38% 하락한 채 낙찰됐다. 구매자는 원본 박스를 훼손하지 않은 동일 조건 매물이 같은 주에 4,200달러에 거래된 걸 ]]></description>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[초고속 광회선인데 구글봇이 일 800페이지에서 멈추는 서버 — 크롤링 대역폭 병목 분석]]></title>
+      <link>https://hikari-fiber.store/posts/guide-001-14xk7oy.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-001-14xk7oy.html</guid>
+      <description><![CDATA[--- 지난 11월, 클라이언트 서버 로그를 뒤지다가 이상한 패턴을 잡았다. TTFB 평균 180ms, CDN 붙어 있고, 서버 자체는 멀쩡하다. 그런데 구글 서치콘솔 크롤 통계를 보면 일일 크롤링 페이지 수가 800을 넘지 못했다. 사이트맵 등록 페이지는 12,000]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[프레임 단위로 잘라낸 보스 3종의 데이터, 내가 스킵 글리치로 되살린 기록]]></title>
+      <link>https://hikari-fiber.store/posts/guide-001-ork53p.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-001-ork53p.html</guid>
+      <description><![CDATA[v1.06 패치 이전 백업 파일 하나가 나를 72시간 모니터 앞에 앉혔다. 이유는 단순했다. 2022년 3월, 데이터마이닝 커뮤니티에서 올라온 미사용 AI 컴포넌트 목록. 거기에 "godskin_ember"라는 이상한 네이밍의 보스 스크립트가 있었고, 나는 그걸 실행 ]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title><![CDATA[Q4_K_M 오버플로우 에러를 통한 브라우저 인덱싱 지연 원인 및 대역폭 최적화]]></title>
       <link>https://hikari-fiber.store/posts/guide-002-1anwiso.html</link>
       <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-002-1anwiso.html</guid>
       <description><![CDATA[## 문제 진단Q4_K_M 에서 특정 히idden 딤이 잘린 순간 Instruction Following 이 무너지는 건 단순한 수치 손실이 아니라 토큰 생성 논리의 붕괴다. `llama.cpp` v0.23.4 에서는 7B 모델의 경우 192 차원 감소 시 `instr]]></description>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[대역폭 10배 늘려도 크롤 속도 안 변하는 이유]]></title>
+      <link>https://hikari-fiber.store/posts/guide-004-162dfdt.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-004-162dfdt.html</guid>
+      <description><![CDATA[작년 여름, 한 클라이언트가 1Gbps에서 10Gbps로 광회선을 교체했다. 서버 TTFB는 12ms에서 3.8ms로 떨어졌는데, 구글 서치콘솔의 일일 크롤 페이지 수는 기존 대비 11% 상승에 그쳤다. 10배 대역폭에 11% 개선이라니. ROI가 말이 안 된다. 문제]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[광회선 1Gbps인데 구글 인덱싱 2주 걸릴 때 — 크롤 가속화 실전 점검 기록]]></title>
+      <link>https://hikari-fiber.store/posts/guide-004-1tzwtdu.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-004-1tzwtdu.html</guid>
+      <description><![CDATA[3월 초, 동대문 근처 마사지숍 리뉴얼 작업을 맡았을 때였다. 서버 스펙은 나쁘지 않았다. 1Gbps 광회선에 NVMe SSD, NGINX 리버스 프록시까지 갖춘 환경. 그런데 서치콘솔에서 확인한 색인 생성 속도는 형편없었다. 신규 페이지 60건 중 2주 동안 색인된 ]]></description>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[다크소울 프리 알파 빌드에 숨겨진 삭제 지역 3곳 — 데이터 마이너 관점 완전 분석]]></title>
+      <link>https://hikari-fiber.store/posts/major_compare-001-1fb5593.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/major_compare-001-1fb5593.html</guid>
+      <description><![CDATA[2010년 E3 시연 빌드에서 불이 붙은 고속도로 휴게소 구역이 존재했다는 사실, 아는 사람 별로 없다. 정식 출시 버전의 디렉토리 어디에도 해당 맵 에셋이 남아있지 않지만, 2011년 9월 프리 알파 캡슐에 그 흔적이 그대로 묻혀 있었다. ## 왜 이 빌드가 특별한가]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[초고속 광회선 깔았는데 구글 색인이 안 빨라지는 이유 — 대역폭과 인덱싱은 아예 다른 문제다]]></title>
+      <link>https://hikari-fiber.store/posts/major_compare-001-u7c96u.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/major_compare-001-u7c96u.html</guid>
+      <description><![CDATA[서버 TTFB가 80ms로 뚝 떨어졌는데 구글 서치콘솔의 '색인 생성' 탭이 열흘이 넘게 멈춰 있다면, 어디부터 의심해야 할까. 2019년에 내가 컨설팅했던 이커머스 사이트가 있었다. LG유플러스 10Gbps 전용선으로 교체한 뒤 Lighthouse 성능 점수가 98까]]></description>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[비너스 확장 에라타 카드, 정품 감별하면서 동시에 구글 크롤링 속도 올리는 방법 — 중고 매입업자의 비밀 공식]]></title>
+      <link>https://hikari-fiber.store/posts/major_compare-003-1mirns1.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/major_compare-003-1mirns1.html</guid>
+      <description><![CDATA[지난주 수요일 저녁, 용산 매물방에서 비너스 확장 1쇄 물건이 올라왔다. 설명란엔 '박스 파撕, 카드 미개봉'이라고 적혀 있었다. 가격은 8만 5천 원. 시세 대비 30% 정도 비쌌다. 나는 이미 5분 전에 거래처 데이터베이스에서 해당 제품의 출하 연도를 확인했다. 2]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[초고속 광회선이 구글 인덱싱 속도를 결정짓는다는 착각, 그리고 그 너머의 현실]]></title>
+      <link>https://hikari-fiber.store/posts/major_compare-003-1o3mixf.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/major_compare-003-1o3mixf.html</guid>
+      <description><![CDATA[1Gbps 광랜을 물려도 구글봇이 ваш 사이트를 3주째 외면하는 상황, 내가 실제로 겪었다. ## 두 가지 접근법의 정의부터 정리 방법 A, 소위 '광회선 대역폭 최적화'. 서버 응답시간(TTFB)을 800ms에서 120ms로 끌어내리고, sitemap.xml 용량을]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title><![CDATA[Creative Title]]></title>
       <link>https://hikari-fiber.store/posts/major_compare-004-1anwiso.html</link>
       <guid isPermaLink="true">https://hikari-fiber.store/posts/major_compare-004-1anwiso.html</guid>
       <description><![CDATA[Thinking Process: 1. **Analyze the Request:** * **Role:** Elite, Explanatory, Efficiency-obsessed Blogger (Geek Persona). Confident, slightly arrogant]]></description>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title><![CDATA[광회선 10G가 인덱싱 속도를 결정하지 않는다 — t3 크레딧 소진 3분 전 커널 패닉이 증명한 반례]]></title>
@@ -42,14 +126,70 @@
       <link>https://hikari-fiber.store/posts/myth-001-1anwiso.html</link>
       <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-001-1anwiso.html</guid>
       <description><![CDATA[Thinking Process: 1. **Analyze the Request:** * **Role:** Niche Scraper / Expert Tone (Elite, Description-Obsessed, Efficiency-Obsessed). Mix of techn]]></description>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[초고속 광회선이 구글 색인 47분 지연시킨 사고 복기 — 대역폭은 넘치는데 크롤러는 안 왔다]]></title>
+      <link>https://hikari-fiber.store/posts/myth-003-1nuqvf3.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-003-1nuqvf3.html</guid>
+      <description><![CDATA[서버 모니터링 대시보드에서 색인 요청이 0건으로 뜨던 화면을 잊을 수가 없다. 10Gbps PON 회선 상향 업그레이드 직후, 역설적으로 구글 색인 속도가 이틀째 제자리였다. ## 첫 번째 실패: 대역폭 착각 A/B 테스트를 돌리기 전 나는 단순히 "회선 빠르면 크롤러]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[광회선 1Gbps인데 구글 색인이 3주 걸리는 이유]]></title>
+      <link>https://hikari-fiber.store/posts/myth-003-1wdd37r.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-003-1wdd37r.html</guid>
+      <description><![CDATA[114ms. 이게 내가 테스트한 서버에서 구글봇의 평균 TTFB(Time To First Byte)였다. 문제는 같은 서버에서 네이버봇은 42ms를 찍었다는 거다. 대역폭은 동일하다. 광회선 1Gbps symmetrical. 분명히 같은 파이프인데 구글은 왜 느리게 오]]></description>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[테라포밍 마스 비너스 확장에서 2인용 밸런스가 붕괴되는 수치적 근거: 왜 자원 토큰 3개가 관건인가]]></title>
+      <link>https://hikari-fiber.store/posts/myth-005-1q0vtge.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-005-1q0vtge.html</guid>
+      <description><![CDATA[테라포밍 마스 비너스 확장(2016년 프리뷰, 2017년 정식 출시)의 구성품 목록을 보면 자원 타일이 기존 대비 11종 추가된다. 비너스 트랙 전용 타일 7개, 리소스 마커 16개, 프로젝트 카드 49장. 이 중 2인 게임에서 실제로 영향을 미치는 건 리소스 마커 1]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[초고속 광회선이 구글 색인 속도를 실제로 올려주는 조건과 통신사 광고의 경계]]></title>
+      <link>https://hikari-fiber.store/posts/myth-005-t8s20j.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-005-t8s20j.html</guid>
+      <description><![CDATA[1Gbps 인터넷 쓰는데 구글 색인이 안 빨라지면, 먼저 자기 서버가 병목인지 확인해본 적 있는가. ## 통신사가 알려주지 않는 구조적 사실 구글 색인 속도는 당신 인터넷 대역폭이 아니라, 구글봇이 당신 사이트에 얼마나 자주 방문할지 결정되는 순간부터 이미 정해져 있다]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[구글 봇이 놓치는 인덱싱盲區, 광회선 대역폭만으로 해결 안 된다]]></title>
+      <link>https://hikari-fiber.store/posts/qa-002-1v3sr01.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/qa-002-1v3sr01.html</guid>
+      <description><![CDATA[다크소울 1편의 2010년 3월 TGS 데모 버전에서 다크루트 동부-area에 존재했던 적 배치를 정식과 동일하다고 가정하고 빌드를 분석해본 적 있는가. 없다면 이 글은 일반적인 "데모vs정식" 비교물과 완전히 다른 결의 논의가 된다. 데모에서 다크루트 동부의 버킷 b]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[초고속 광회선 대역폭이 구글 인덱싱 속도를 실제로 바꾸는 조건들 — CDN·서버 응답시간·robots.txt 처리 순서까지]]></title>
+      <link>https://hikari-fiber.store/posts/qa-002-xndx7e.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/qa-002-xndx7e.html</guid>
+      <description><![CDATA[## 실패 기록: 10Gbps 인터넷이 인덱싱을 3배 빠르게 해준다는 환상 지난달 한 고객사 프로젝트에서 10Gbps 광회선을 설치하고 구글 인덱싱 속도가 비약적으로 빨라질 것이라 확신했다. 결과는 참담했다.新규 페이지 색인까지 평균 72시간. 기존 500Mbps 회선]]></description>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[초고속 회선 깔았다고 마진이 오르나? 룸 단위 서비스업 원가의 숨겨진 계층 구조]]></title>
+      <link>https://hikari-fiber.store/posts/qa-004-k32anj.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/qa-004-k32anj.html</guid>
+      <description><![CDATA[장사 접을 때 손익계산서 마지막 장에 붙어 있던 포스트잇이 아직도 기억난다. "매출 3,200 - 비용 3,350 = -150". 월 3천 벌고 적자 본다는 게 어떤 건지, 수치로 딱 보이니까 오히려 더 가슴이 아팠다. ## 3,000 벌어도 적자 보는 구조적 함정 룸]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[초고속 광회선 뚫었는데 구글이 안 돌아오는 이유 — 대역폭과 인덱싱은 완전히 다른 잡담이다]]></title>
+      <link>https://hikari-fiber.store/posts/qa-004-qzez0c.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/qa-004-qzez0c.html</guid>
+      <description><![CDATA[200Mbps 사무실 회선에서 등록한 페이지가 3일 만에 인덱싱됐고, 1Gbps 초고속 회선을 물린 자택 서버에서는 2주째 색인이 안 걸린 사례가 있었다. 나는 처음에 대역폭을 의심했지만, 문제가 거기에 있지 않았다. 데이터 과학자 시점에서 말하자면, 대역폭과 구글 인]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title><![CDATA[양자화 PR 머지 직전 발견된 엣지케이스가 구글 인덱싱 속도 최적화에 주는 함정]]></title>
       <link>https://hikari-fiber.store/posts/qa-005-1anwiso.html</link>
       <guid isPermaLink="true">https://hikari-fiber.store/posts/qa-005-1anwiso.html</guid>
       <description><![CDATA[늦은 밤 풀스택 리포지토리에서 `llama.cpp` 메인 브랜치 머지를 기다리던 찰나였다. `Llama-3.1-8B-Instruct-GGUF` 모델을 양자화 작업 중인데, `RoPE theta` 파라미터를 50만에서 5000만으로 확장했을 때 예상치 못한 불안정성이 발]]></description>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
     </item>
 </channel>
 </rss>
