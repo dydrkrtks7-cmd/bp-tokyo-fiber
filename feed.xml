@@ -5,8 +5,8 @@
   <link>https://hikari-fiber.store</link>
   <description><![CDATA[크롤 가속화 - 구글 인덱싱 속도 초고속 광회선 대역폭 최적화 관련 최신 소식 및 가이드]]></description>
   <language>ko</language>
-  <pubDate>Sun, 26 Jul 2026 09:50:01 GMT</pubDate>
-  <lastBuildDate>Sun, 26 Jul 2026 09:50:01 GMT</lastBuildDate>
+  <pubDate>Sun, 26 Jul 2026 15:11:18 GMT</pubDate>
+  <lastBuildDate>Sun, 26 Jul 2026 15:11:18 GMT</lastBuildDate>
   <atom:link href="https://hikari-fiber.store/feed.xml" rel="self" type="application/rss+xml" />
   
     <item>
@@ -70,6 +70,13 @@
       <link>https://hikari-fiber.store/posts/guide-001-14xk7oy.html</link>
       <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-001-14xk7oy.html</guid>
       <description><![CDATA[--- 지난 11월, 클라이언트 서버 로그를 뒤지다가 이상한 패턴을 잡았다. TTFB 평균 180ms, CDN 붙어 있고, 서버 자체는 멀쩡하다. 그런데 구글 서치콘솔 크롤 통계를 보면 일일 크롤링 페이지 수가 800을 넘지 못했다. 사이트맵 등록 페이지는 12,000]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[구글 인덱싱 속도 최적화, 30% 인지도 상승을 위한 로컬 비즈니스 마케팅 가이드]]></title>
+      <link>https://hikari-fiber.store/posts/guide-001-15syr82.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-001-15syr82.html</guid>
+      <description><![CDATA[구글 인덱싱 속도를 올리는 것은 로컬 비즈니스에게 큰 도전이 될 수 있습니다. 실제로, 평균적으로 1초 이내에 로딩되는 웹페이지가 2초 이상에 로딩되는 페이지보다 2배 이상 더 많은 트래픽을 유도합니다. 하지만, 이러한 지식만으로는 충분하지 않습니다. 로컬 비즈니스 오]]></description>
       <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>

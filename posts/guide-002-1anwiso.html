@@ -23,8 +23,8 @@
     <h1>Q4_K_M 오버플로우 에러를 통한 브라우저 인덱싱 지연 원인 및 대역폭 최적화</h1>
     <article>
       <p><img src="../assets/interior__hero__tokyo-fiber__1344x768__26d689febc096ec9.webp" alt="Q4_K_M 양자화 시뮬레이션과 GPU 메모리 계층 구조 분석도" loading="lazy" width="1344" height="768"></p>
-<p>## 문제 진단<br>Q4_K_M 에서 특정 히idden 딤이 잘린 순간 Instruction Following 이 무너지는 건 단순한 수치 손실이 아니라 토큰 생성 논리의 붕괴다. `llama.cpp` v0.23.4 에서는 7B 모델의 경우 192 차원 감소 시 `instruction_following_score` 가 0.85 에서 0.65 로 떨어지는 현상을 발견했다. 이는 양자화 과정에서 Q4_K_M 의 스케일링 팩터가 임계값을 넘으면 attention head 의 게이트 활성화가 비선형적으로 왜곡되기 때문이다. 특히 `hidden_dim_truncation` 이 발생할 경우 모델의 문맥 이해 능력이 급격히 감소하여 프롬프트 준수율이 떨어진다. 2024 년 초에 발견된 이 버그는 7B 클래스 모델에서 가장 빈번하게 발생했으며, 버전 업데이트 시에도 재현되었다.</p>
-<p>## 실행 단계<br>오픈소스 기여자 관점에서 보면 PR 머지 직전에 발견된 엣지케이스는 GPU 메모리 할당 패턴에 따라 재현 조건이 달랐다. NVIDIA A10G 에서 정상 작동하는 반면, RTX 3060 12GB 가 4096 바이트 구간에서 `CUDA_ERROR_MEMORY_ALLOCATION`</p>
+<h2>문제 진단<br>Q4_K_M 에서 특정 히idden 딤이 잘린 순간 Instruction Following 이 무너지는 건 단순한 수치 손실이 아니라 토큰 생성 논리의 붕괴다. <code>llama.cpp</code> v0.23.4 에서는 7B 모델의 경우 192 차원 감소 시 <code>instruction_following_score</code> 가 0.85 에서 0.65 로 떨어지는 현상을 발견했다. 이는 양자화 과정에서 Q4_K_M 의 스케일링 팩터가 임계값을 넘으면 attention head 의 게이트 활성화가 비선형적으로 왜곡되기 때문이다. 특히 <code>hidden_dim_truncation</code> 이 발생할 경우 모델의 문맥 이해 능력이 급격히 감소하여 프롬프트 준수율이 떨어진다. 2024 년 초에 발견된 이 버그는 7B 클래스 모델에서 가장 빈번하게 발생했으며, 버전 업데이트 시에도 재현되었다.</h2>
+<h2>실행 단계<br>오픈소스 기여자 관점에서 보면 PR 머지 직전에 발견된 엣지케이스는 GPU 메모리 할당 패턴에 따라 재현 조건이 달랐다. NVIDIA A10G 에서 정상 작동하는 반면, RTX 3060 12GB 가 4096 바이트 구간에서 <code>CUDA_ERROR_MEMORY_ALLOCATION</code></h2>
     </article>
   </main>
 </body>
