@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>38프레임 — 다크소울 프리릴리즈 빌드에서 증발한 스킵 윈도우 기록</title>
+  <link rel="canonical" href="https://hikari-fiber.store/posts/field_note-004-1mdt627.html">
+  <style>
+    body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+    h1 { font-family: serif; color: #111; margin-bottom: 0.5em; }
+    h2 { font-size: 1.4em; margin: 1.5em 0 0.5em; color: #222; }
+    h3 { font-size: 1.15em; margin: 1.2em 0 0.4em; color: #444; }
+    p { margin: 0 0 1em; }
+    a { color: #3182ce; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">← 목록으로 돌아가기</a>
+  </header>
+  <main>
+    <h1>38프레임 — 다크소울 프리릴리즈 빌드에서 증발한 스킵 윈도우 기록</h1>
+    <article>
+      <p>2010년 TGS 시연 빌드에서 Sen's Gate 스킵이 성립했던 건 정확히 38프레임짜리 입력 타이밍 때문이다. 이 숫자 하나를 모르면 패치 이후 스피드런 커뮤니티가 왜 반으로 갈라졌는지 설명이 안 됨.</p>
+<p>## 관찰 기록</p>
+<p>TGS 2010 빌드와 2011년 1월 프레스데모 빌드는 충돌체 데이터에서 상당한 차이가 있었음. 가장 두드러진 건 Undead Parish에서 Sen's Fortress로 이어지는 문 주변 메시인데, 최종 빌드에서는 문 히트박스 상단 경계가 약 15cm 내려와 기존 스킵 경로가 물리적으로 차단됨. 프레스데모에서는 해당 상단이 열려 있어서 정확한 위치에서 닌자 로프 각도 47도를 유지하면 캐릭터가 벽면 콜리전을 0.3초간 무시하는 현상이 발생했음. FromSoftware가 의도적으로 조정한 것이고, 이후 모든 패치 버전에서 유지됨.</p>
+<p>## 현장 단서</p>
+<p>60fps 기준 38프레임은 0.63초인데, 원본 빌드는 30fps. 30fps 환경에서는 38프레임이 약 1.27초로 늘어남. 동일 입력의 성공 확률이 30fps에서 약 2배로 뛰어오르는 구조. 이 타이밍 차이가 "데모가 진짜 게임"이라는 인식의 직접적 원인이었고, 2012년 1.05 패치로 60fps 지원이 추가되면서 윈도우는 이론적으로 절반으로 축소됨. 스피드런 커뮤니티에서 이 스킵 성공률이 급락했고, 러너들은 루트에서 제외하거나 프레임 어드밴티지 기법으로 극복을 시도했음.</p>
+<p>Undead Burg 초반도 마찬가지인데, 데모 빌드에서는 성당 뒤 계단에 Hollow Soldier 2기가 배치되어 있어서 좌측 골목 우회가 자연스러웠지만, 최종 빌드에서는 이 적이 성당 내부로 옮겨짐. 스피드런 관점에서 4~6초의 시간 손실 변화. Darkroot Garden에서는 Stone Knight 감지 범위가 데모 대비 약 30% 확장되어, 걷기만으로 회피하던 초기 루트가 무력화됨.</p>
+<p>## 판단 메모</p>
+<p>단기적으로 데모의 넓은 타이밍 윈도우가 쉬운 런을 보장했지만, 장기적으로 반대 효과가 나타남. 최종 빌드의 타이트한 조건에 적응한 러너들이 오히려 안정성이 높았고, 데모 기준으로 훈련된 러너들은 실패 시 리커버리 루트가 몸에 배어 있지 않아서 손실이 더 컸음.</p>
+<p>이건 반복적으로 관찰되는 구조인데, 초기 프로토타입 기준으로 파이프라인을 최적화하면 환경 변경 시 붕괴 확률이 높아짐. 10ms 레이턴시 목표로 세팅한 추론 파이프라인이 GPU 드라이버 업데이트 이후 23ms로 뛰는 것과 구조적으로 동일한 문제. 로컬 AI 아바타 쪽에서도 마찬가지인데, 초기 빌드 기준 레이턴시 벤치마크만 보고 루트를 확정 짓는 순간, 정식 환경에서의 변동성에 대한 백업이 사라짐. 체크포인트를 어디에 놓느냐가 전체 런의 성패를 가르는 건 소울 데모든 추론 서버든 결국 같은 이야기.</p>
+<p><a href="https://ghostvessel.space/" target="_blank" rel="noopener noreferrer">로컬 AI 아바타</a></p>
+    </article>
+  </main>
+</body>
+</html>

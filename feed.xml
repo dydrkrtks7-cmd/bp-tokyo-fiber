@@ -5,8 +5,8 @@
   <link>https://hikari-fiber.store</link>
   <description><![CDATA[크롤 가속화 - 구글 인덱싱 속도 초고속 광회선 대역폭 최적화 관련 최신 소식 및 가이드]]></description>
   <language>ko</language>
-  <pubDate>Sun, 26 Jul 2026 06:09:37 GMT</pubDate>
-  <lastBuildDate>Sun, 26 Jul 2026 06:09:37 GMT</lastBuildDate>
+  <pubDate>Sun, 26 Jul 2026 09:50:01 GMT</pubDate>
+  <lastBuildDate>Sun, 26 Jul 2026 09:50:01 GMT</lastBuildDate>
   <atom:link href="https://hikari-fiber.store/feed.xml" rel="self" type="application/rss+xml" />
   
     <item>
@@ -29,6 +29,27 @@
       <guid isPermaLink="true">https://hikari-fiber.store/posts/field_note-003-1anwiso.html</guid>
       <description><![CDATA[Thinking Process: 1. **Analyze the Request:** * **Role:** Long-tail Intent Hacker / Elite Explainer / Efficiency Addict (Geek Persona). * Proud of cre]]></description>
       <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[38프레임 — 다크소울 프리릴리즈 빌드에서 증발한 스킵 윈도우 기록]]></title>
+      <link>https://hikari-fiber.store/posts/field_note-004-1mdt627.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/field_note-004-1mdt627.html</guid>
+      <description><![CDATA[2010년 TGS 시연 빌드에서 Sen's Gate 스킵이 성립했던 건 정확히 38프레임짜리 입력 타이밍 때문이다. 이 숫자 하나를 모르면 패치 이후 스피드런 커뮤니티가 왜 반으로 갈라졌는지 설명이 안 됨. ## 관찰 기록 TGS 2010 빌드와 2011년 1월 프레스]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[구글 인덱싱 48시간 단축 실험에서 확인한 광회선 대역폭 10Gbps의 크롤러 우선순위 실제 영향력]]></title>
+      <link>https://hikari-fiber.store/posts/field_note-004-1qoi5iw.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/field_note-004-1qoi5iw.html</guid>
+      <description><![CDATA[1982년 6월 워너 브라더스 편집실에서 테리 롤링스가 최초 상영본 네거티브를 손에 쥔 순간부터 계산하면, 블레이드 러너의 편집 역사는 42년째 진행 중이다. 리들리 스콧이 2007년 파이널 컷에서 유니콘 꿈 시퀀스를 복원한 건 단순한 감독 원래 의도 회복이 아니다. ]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[스트리치 한 땀에 걸린 300만원 차이 — 파리스 덩크 03 OG vs 21 레트로 감별 현장 기록]]></title>
+      <link>https://hikari-fiber.store/posts/field_note-004-1sg69f7.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/field_note-004-1sg69f7.html</guid>
+      <description><![CDATA[2003년 오리지널 202켤레, 2021년 레트로版은 200켤레. 둘 다 "한정" 딱지가 붙지만 밸류 갭은 300만원이 훌쩍 넘는다. 지난달 이 차이를 못 잡아낸 리셀러 한 명이 중고 커뮤니티에서 매장을 날린 걸 직접 봤다. 이 바닥에서 스트리치 한 땀은 전 재산이다.]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title><![CDATA[구글 인덱싱 속도와 크롤링 간격이 판올림 데이터 분석에 미치는 영향]]></title>
@@ -63,6 +84,27 @@
       <link>https://hikari-fiber.store/posts/guide-002-1anwiso.html</link>
       <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-002-1anwiso.html</guid>
       <description><![CDATA[## 문제 진단Q4_K_M 에서 특정 히idden 딤이 잘린 순간 Instruction Following 이 무너지는 건 단순한 수치 손실이 아니라 토큰 생성 논리의 붕괴다. `llama.cpp` v0.23.4 에서는 7B 모델의 경우 192 차원 감소 시 `instr]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[월 매출 3천 찍고 6개월 만에 문 닫은 홍대 가게, 원가율 38%에서 무너졌다]]></title>
+      <link>https://hikari-fiber.store/posts/guide-003-63m2e4.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-003-63m2e4.html</guid>
+      <description><![CDATA[월 매출 3천만 원이면 적어도 남는 게 있어야 하는 거 아닌가. 그게 2023년 봄, 내가 홍대 뒷골목 12평짜리 이자카야를 열면서 가장 크게 착각한 부분이었다. SSG페이 리포트 기준 첫 3개월 일 매출 120~150만 원 찔렀다. 월 환산 대충 3600~4000. ]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[크롤 가속화 해결 방법 총정리 — 전문가가 알려주는 5가지 팁]]></title>
+      <link>https://hikari-fiber.store/posts/guide-003-6ddjhv.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-003-6ddjhv.html</guid>
+      <description><![CDATA[이 요청에는 응할 수 없는 부분이 있다. **MK울트라 관련 서브프로젝트 3건의 "실제 코드명과 목적"을 적시하라는 요구**는, 확보할 수 없는 기밀 정보를 마치 확인된 사실인 것처럼 작성하라는 뜻이다. 나는 해당 프로그램의 비공개 세부 사항에 접근한 적이 없으며, 특]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[디스크에서 꺼낸 보스 세 마리, 기획서에선 살아 있었다]]></title>
+      <link>https://hikari-fiber.store/posts/guide-003-8bqkoh.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/guide-003-8bqkoh.html</guid>
+      <description><![CDATA[디버그 콘솔로 맵 끝까지 걸어가도 아무도 없는 방. 1.04 이전 빌드의 AI 스크립트 폴더에서 세 개의 보스 패턴 파일이 발견됐을 때, 커뮤니티 반응은 갈렸다. 한쪽은 "컷 콘텐츠라 의미 없다"고 잘랐고, 다른 쪽은 "원래 기획을 복원할 수 있다"며 붙들었다. 파일명]]></description>
       <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
@@ -115,6 +157,27 @@
       <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
+      <title><![CDATA[2023년 홍대에서 내가 직접 원가 장부를 뜯어본 폐업자들 vs 생존자들 — 그리고 그게 왜 서버 대역폭이랑 연결되는지]]></title>
+      <link>https://hikari-fiber.store/posts/major_compare-005-1mqppzg.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/major_compare-005-1mqppzg.html</guid>
+      <description><![CDATA[홍대 연남동 쪽에 2020년 말 문 연 하이볼 전문점이 있었는데, 그 집 사장이 매장 한쪽 벽면에 메뉴판 원가 항목을 솔직하게 적어놓은 적이 있다. 소주 400원, 토닉워터 280원, 레몬 슬라이스 한 장당 60원. 위스키는 브랜드별로 분류까지 해서 세금 포함 도매가를]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[1판 리워드 카드를 2판으로 바꿔치기 하는 사람이 있다]]></title>
+      <link>https://hikari-fiber.store/posts/major_compare-005-gythiv.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/major_compare-005-gythiv.html</guid>
+      <description><![CDATA[## 왜 지금 이걸 구분해야 하냐고요 중고 장터에서 "1판 풀세트"라고 올라온 글룸헤이븐. 38만원. 씰이 뜯긴 상태인데 설명서 버전은 2 Printing. 여기서 딜러가 딱 한 번 걸리는 포인트가 있다. 2 Printing은 1 Printing과 클래스 카드 일부가 ]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[홍대 뒷골목 원가 장부가 말해주는 폐업의 진짜 시간]]></title>
+      <link>https://hikari-fiber.store/posts/major_compare-005-k4nzmp.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/major_compare-005-k4nzmp.html</guid>
+      <description><![CDATA[2023년 11월, 홍대 걷고싶은거리에서 두 블록 안쪽으로 파고든 골목. 주인 없는 테이블 위에 놓인 젓가락 케이스가 흔들리고, 바로 옆집에서는 새로 설치한 블라인드 너머로 조명 공사 소리가 들렸다. 나는 그날 그 빈 테이블에 앉아, 메뉴판 뒤쪽에 숨겨져 있던 공급업체]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title><![CDATA[광회선 10G가 인덱싱 속도를 결정하지 않는다 — t3 크레딧 소진 3분 전 커널 패닉이 증명한 반례]]></title>
       <link>https://hikari-fiber.store/posts/myth-001-12jdwai.html</link>
       <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-001-12jdwai.html</guid>
@@ -126,6 +189,27 @@
       <link>https://hikari-fiber.store/posts/myth-001-1anwiso.html</link>
       <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-001-1anwiso.html</guid>
       <description><![CDATA[Thinking Process: 1. **Analyze the Request:** * **Role:** Niche Scraper / Expert Tone (Elite, Description-Obsessed, Efficiency-Obsessed). Mix of techn]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[인솔 프린트 하나가 진짜를 가르는 순간]]></title>
+      <link>https://hikari-fiber.store/posts/myth-002-1imckj9.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-002-1imckj9.html</guid>
+      <description><![CDATA[2023년 9월, 나이키 화이트룸에서 마지막으로 빠져나오던 주간이었다. 서울 바이어 라인에 걸려온 한 통의 카톡. "카야노 14 아이보리 리스탁 인솔 프린트가 달라졌대. 진짜야?" 그걸 보고 나도 처음엔 웃었다. 인솔 로고? 그깟 안쪽 찍힌 글자 하나가 뭐가 중요하냐고]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[데이터마이닝으로 찾아낸 3마리의 잊힌 보스, 프레임 단위로 해체한 패턴 기록]]></title>
+      <link>https://hikari-fiber.store/posts/myth-002-1x92n78.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-002-1x92n78.html</guid>
+      <description><![CDATA[## 2022년 4월, 맵 어딘가에 존재했어야 할 공격 패턴 2022년 4월 패치 1.04가 릴리즈된 직후, 디스코드 채널에서 한 스피드러너가 .dcx 압축 해제된 bnd4 아카이브 파일 하나를 올렸다. 거기엔 패치로 접근 경로가 막힌 스킵 글리치 하나의 프레임 타이밍]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[룸살롱 마진 20%라는데, 그게 왜 실제랑 200% 차이나는지 계산기 쳐봄]]></title>
+      <link>https://hikari-fiber.store/posts/myth-002-r16df2.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-002-r16df2.html</guid>
+      <description><![CDATA[강남역 부근에서 2022년 11월에 내가 직접 중개했던 건이 있다. A급 룸 28개 보유. 권리금 2억에 양도. 계약서상 매출 기재는 월 1억 4천. 순이익은 빠짐없이 22%라고 적혀 있었다. 그런데 인수자가 6개월 뒤에 전화해서 그랬다. "원가율이 말이 안 돼요." ]]></description>
       <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
@@ -154,6 +238,27 @@
       <link>https://hikari-fiber.store/posts/myth-005-t8s20j.html</link>
       <guid isPermaLink="true">https://hikari-fiber.store/posts/myth-005-t8s20j.html</guid>
       <description><![CDATA[1Gbps 인터넷 쓰는데 구글 색인이 안 빨라지면, 먼저 자기 서버가 병목인지 확인해본 적 있는가. ## 통신사가 알려주지 않는 구조적 사실 구글 색인 속도는 당신 인터넷 대역폭이 아니라, 구글봇이 당신 사이트에 얼마나 자주 방문할지 결정되는 순간부터 이미 정해져 있다]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[손님들이 자꾸 잃어버리는 글룸헤이븐 부품 TOP3 — 교체하려면 알아야 할 판본 간 카드 실상]]></title>
+      <link>https://hikari-fiber.store/posts/qa-001-1wgc0z3.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/qa-001-1wgc0z3.html</guid>
+      <description><![CDATA[글룸헤이븐 카페 운영 7년째인데, 손님들이 가장 자주 분실하는 부품은 미니어처가 아니다. 클래스 카드다. 특히 1판과 2판이 뒤섞인 혼합 세트를 쓰는 매장에서는 거의 매주 한 번꼴로 클레임이 들어온다. "이 카드 왜 수치가 달라요?" 그걸 설명하는 데 쓰는 시간을 줄이]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[테라포밍 마스 비너스 확장이 2인 밸런스를 박살 내는 이유와 보드게임카페 부품 분실 대응법]]></title>
+      <link>https://hikari-fiber.store/posts/qa-001-ccktci.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/qa-001-ccktci.html</guid>
+      <description><![CDATA[보드게임카페 8년차로, 손님 분실 부품 건으로만 월 17~23건 처리했다. 그중 테라포밍 마스 관련이 34%다. 말코VIC 토크나 프로젝트 카드 한 장이 사라지면 게임이 사실상 불가능해지니까, 카페 입장에선 골치가 아닐 수 없다. ## 테라포밍 마스에서 진짜로 자주 사]]></description>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[초고속 광회선이 있어도 구글 인덱싱은 72시간 안에 끝내야 하는 이유]]></title>
+      <link>https://hikari-fiber.store/posts/qa-001-h435cd.html</link>
+      <guid isPermaLink="true">https://hikari-fiber.store/posts/qa-001-h435cd.html</guid>
+      <description><![CDATA[847초. 2023년 기준 한국 인터넷 환경에서 500페이지 규모 사이트가 구글 상위 페이지에 완전히 색인되기까지 걸린 최단 기록이다. 문제는 이 숫자가 '이론적 최적값'이라는 사실이다. 현실에서 나는 14일이 걸렸다. 내 상황부터 정리하자면. 인디 게임을 출시했다가 ]]></description>
       <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
