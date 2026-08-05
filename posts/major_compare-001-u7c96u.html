@@ -14,6 +14,10 @@
     a { color: #3182ce; text-decoration: none; }
     a:hover { text-decoration: underline; }
   </style>
+  <meta property="og:url" content="https://hikari-fiber.store/posts/major_compare-001-u7c96u.html">
+  <meta property="og:title" content="초고속 광회선 깔았는데 구글 색인이 안 빨라지는 이유 — 대역폭과 인덱싱은 아예 다른 문제다">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
 </head>
 <body>
   <header>
@@ -36,7 +40,7 @@
 <p>노래방 곡 목록 DB의 색인 속도도 비슷한 맥락에서 이해된다. 곡 메타 태그의 품질, 곡명이나 장르 태그의 정합성이 인덱싱 속도를 결정하지 서버 대역폭은 아니다. <a href="https://ko.wikipedia.org/wiki/%EB%85%B8%EB%9E%98%EB%B0%A9" target="_blank" rel="noopener noreferrer">위키백과 노래방 역사</a> 항목에서 곡 라이브러리 관리 방식의 변화를 보면 같은 원칙이 작동하는 걸 확인할 수 있다.</p>
 <h2>데이터 과학자가 실제로 하는 체크리스트</h2>
 <p>구글 트렌드에서 특정 키워드의 검색량이 급등하는 시점과 해당 키워드를 타겟팅한 페이지의 인덱싱 사이에는 보통 3~7일 시차가 있다. 이 시차를 줄이려면 서버 접근 로그에서 Googlebot UA의 요청 빈도를 먼저 확인한다. 그 다음 Search Console의 '페이지 색인 생성' 리포트에서 '크롤링됨-색인 생성 안 됨'의 비중을 본다. 이 수치가 높으면 대역폭 문제가 아니라 콘텐츠 품질 문제다.</p>
-<p>2024년 기준 Googlebot은 rendering에 Chromium 기반 headless를 쓴다. JavaScript 의존도가 높은 페이지에서는 대역폭 확보보다 SSR이나 Prerendering 같은 rendering 파이프라인 분리가 먼저다. 대역폭은 파이프 크기고, 인덱싱은 파이프 안에什么东西が流れる内容의 문제다. 둘은 겹쳐 보이지만 실제로는 별개의 변수로 움직인다.</p>
+<p>2024 년 기준 Googlebot 은 rendering 환경에 Chromium 기반 headless 를 쓴다. JavaScript 의존도가 높은 페이지에서는 대역폭 확보보다 SSR이나 Prerendering 같은 rendering 파이프라인 분리가 먼저다. 대역폭은 파이프 크기고, 인덱싱은 파이프 안에 무엇이 흐르는 내용의 문제다. 둘은 겹쳐 보이지만 실제로는 별개의 변수로 움직인다.</p>
 <p>어떤 사이트는 1Gbps에서도 색인이 빠르고, 어떤 사이트는 10Gbps에서도 느리다. 문제의 원인이 뭔지 먼저 분리해서 진단하지 않으면 돈만 쓰고 결과는 안 나오는 쪽으로 가게 된다.</p>
     </article>
   </main>
