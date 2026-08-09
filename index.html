@@ -1,448 +1,448 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>구글 초고속 광인덱싱 최적화 솔루션 — TOKYO HIKARI FIBER</title>
-  <meta name="description" content="빛의 속도로 구글 검색 봇을 통과시킵니다. 지연 시간 0ms의 광대역 크롤 파이버망 설계로 신규 발행 페이지를 실시간 강제 색인합니다.">
-  <link rel="canonical" href="https://hikari-fiber.store/">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="구글 초고속 광인덱싱 최적화 솔루션 — TOKYO HIKARI FIBER">
-  <meta property="og:description" content="빛의 속도로 구글 검색 봇을 통과시킵니다. 지연 시간 0ms의 광대역 크롤 파이버망 설계로 신규 발행 페이지를 실시간 강제 색인합니다.">
-  <meta property="og:url" content="https://hikari-fiber.store/">
-  <meta property="og:type" content="website">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;800;900&family=Inter:wght@300;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg-white: #ffffff;
-      --bg-light: #f6f8fd;
-      --text-main: #0c0f1d;
-      --text-slate: #525875;
-      --accent-indigo: #4f46e5;
-      --accent-cyan: #06b6d4;
-      --border-thin: 0.5px solid #0c0f1d;
-      --border-soft: 0.5px solid rgba(12, 15, 29, 0.08);
-      --font-swiss: 'Outfit', 'Inter', sans-serif;
-      --font-kr: 'Noto Sans KR', sans-serif;
-    }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>구글 초고속 광인덱싱 최적화 솔루션 — TOKYO HIKARI FIBER</title>
+ <meta name="description" content="빛의 속도로 구글 검색 봇을 통과시킵니다. 지연 시간 0ms의 광대역 크롤 파이버망 설계로 신규 발행 페이지를 실시간 강제 색인합니다.">
+ <link rel="canonical" href="https://hikari-fiber.store/">
+ 
+ <!-- Open Graph -->
+ <meta property="og:title" content="구글 초고속 광인덱싱 최적화 솔루션 — TOKYO HIKARI FIBER">
+ <meta property="og:description" content="빛의 속도로 구글 검색 봇을 통과시킵니다. 지연 시간 0ms의 광대역 크롤 파이버망 설계로 신규 발행 페이지를 실시간 강제 색인합니다.">
+ <meta property="og:url" content="https://hikari-fiber.store/">
+ <meta property="og:type" content="website">
+ 
+ <!-- Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;800;900&family=Inter:wght@300;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+ 
+ <style>
+ :root {
+ --bg-white: #ffffff;
+ --bg-light: #f6f8fd;
+ --text-main: #0c0f1d;
+ --text-slate: #525875;
+ --accent-indigo: #4f46e5;
+ --accent-cyan: #06b6d4;
+ --border-thin: 0.5px solid #0c0f1d;
+ --border-soft: 0.5px solid rgba(12, 15, 29, 0.08);
+ --font-swiss: 'Outfit', 'Inter', sans-serif;
+ --font-kr: 'Noto Sans KR', sans-serif;
+ }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
 
-    body {
-      background-color: var(--bg-white);
-      color: var(--text-main);
-      font-family: var(--font-swiss), var(--font-kr);
-      line-height: 1.7;
-      letter-spacing: -0.02em;
-    }
+ body {
+ background-color: var(--bg-white);
+ color: var(--text-main);
+ font-family: var(--font-swiss), var(--font-kr);
+ line-height: 1.7;
+ letter-spacing: -0.02em;
+ }
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 40px;
-    }
+ .container {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 0 40px;
+ }
 
-    /* Swiss Bold Line Header */
-    header {
-      border-bottom: var(--border-thin);
-      padding: 25px 0;
-      background: var(--bg-white);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+ /* Swiss Bold Line Header */
+ header {
+ border-bottom: var(--border-thin);
+ padding: 25px 0;
+ background: var(--bg-white);
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
 
-    .nav-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+ .nav-wrap {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
 
-    .logo {
-      font-weight: 900;
-      font-size: 1.25rem;
-      letter-spacing: -0.04em;
-      color: var(--text-main);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+ .logo {
+ font-weight: 900;
+ font-size: 1.25rem;
+ letter-spacing: -0.04em;
+ color: var(--text-main);
+ text-decoration: none;
+ display: flex;
+ align-items: center;
+ gap: 6px;
+ }
 
-    .logo::before {
-      content: '';
-      display: inline-block;
-      width: 14px; height: 4px;
-      background: var(--accent-indigo);
-    }
+ .logo::before {
+ content: '';
+ display: inline-block;
+ width: 14px; height: 4px;
+ background: var(--accent-indigo);
+ }
 
-    nav {
-      display: flex;
-      gap: 40px;
-    }
+ nav {
+ display: flex;
+ gap: 40px;
+ }
 
-    nav a {
-      color: var(--text-slate);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
-    }
+ nav a {
+ color: var(--text-slate);
+ text-decoration: none;
+ font-size: 0.8rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ transition: color 0.2s;
+ }
 
-    nav a:hover {
-      color: var(--text-main);
-    }
+ nav a:hover {
+ color: var(--text-main);
+ }
 
-    /* Hero with Bold Typography */
-    .hero {
-      padding: 100px 0 60px 0;
-      border-bottom: var(--border-thin);
-    }
+ /* Hero with Bold Typography */
+ .hero {
+ padding: 100px 0 60px 0;
+ border-bottom: var(--border-thin);
+ }
 
-    .swiss-code {
-      font-family: monospace;
-      font-size: 0.72rem;
-      color: var(--accent-indigo);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 20px;
-    }
+ .swiss-code {
+ font-family: monospace;
+ font-size: 0.72rem;
+ color: var(--accent-indigo);
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ margin-bottom: 20px;
+ }
 
-    h1 {
-      font-size: clamp(2.2rem, 6vw, 3.6rem);
-      font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      margin-bottom: 30px;
-    }
+ h1 {
+ font-size: clamp(2.2rem, 6vw, 3.6rem);
+ font-weight: 900;
+ line-height: 1.05;
+ letter-spacing: -0.04em;
+ margin-bottom: 30px;
+ }
 
-    h1 span {
-      color: var(--accent-indigo);
-    }
+ h1 span {
+ color: var(--accent-indigo);
+ }
 
-    .hero-meta {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 50px;
-      margin-top: 40px;
-    }
+ .hero-meta {
+ display: grid;
+ grid-template-columns: 2fr 1fr;
+ gap: 50px;
+ margin-top: 40px;
+ }
 
-    .hero-desc {
-      font-size: 0.98rem;
-      color: var(--text-slate);
-      font-weight: 300;
-    }
+ .hero-desc {
+ font-size: 0.98rem;
+ color: var(--text-slate);
+ font-weight: 300;
+ }
 
-    .btn-minimal {
-      display: inline-block;
-      border: var(--border-thin);
-      color: var(--text-main);
-      padding: 12px 30px;
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 700;
-      transition: all 0.3s;
-      text-align: center;
-    }
+ .btn-minimal {
+ display: inline-block;
+ border: var(--border-thin);
+ color: var(--text-main);
+ padding: 12px 30px;
+ text-decoration: none;
+ font-size: 0.8rem;
+ font-weight: 700;
+ transition: all 0.3s;
+ text-align: center;
+ }
 
-    .btn-minimal:hover {
-      background: var(--text-main);
-      color: var(--bg-white);
-    }
+ .btn-minimal:hover {
+ background: var(--text-main);
+ color: var(--bg-white);
+ }
 
-    /* Grid Section Info */
-    .section {
-      padding: 80px 0;
-      border-bottom: var(--border-soft);
-    }
+ /* Grid Section Info */
+ .section {
+ padding: 80px 0;
+ border-bottom: var(--border-soft);
+ }
 
-    .section.dark {
-      background-color: var(--bg-light);
-      border-bottom: var(--border-thin);
-    }
+ .section.dark {
+ background-color: var(--bg-light);
+ border-bottom: var(--border-thin);
+ }
 
-    .grid-vitals {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background-color: rgba(12, 15, 29, 0.08);
-      border: var(--border-soft);
-      margin-top: 40px;
-    }
+ .grid-vitals {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 1px;
+ background-color: rgba(12, 15, 29, 0.08);
+ border: var(--border-soft);
+ margin-top: 40px;
+ }
 
-    .vital-box {
-      background-color: var(--bg-white);
-      padding: 30px;
-    }
+ .vital-box {
+ background-color: var(--bg-white);
+ padding: 30px;
+ }
 
-    .vital-num {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--text-main);
-      line-height: 1.1;
-    }
+ .vital-num {
+ font-size: 2.2rem;
+ font-weight: 900;
+ color: var(--text-main);
+ line-height: 1.1;
+ }
 
-    .vital-title {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--text-slate);
-      margin-top: 10px;
-      letter-spacing: 0.05em;
-    }
+ .vital-title {
+ font-size: 0.7rem;
+ text-transform: uppercase;
+ font-weight: 700;
+ color: var(--text-slate);
+ margin-top: 10px;
+ letter-spacing: 0.05em;
+ }
 
-    /* Process Table */
-    .process-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 40px;
-    }
+ /* Process Table */
+ .process-table {
+ width: 100%;
+ border-collapse: collapse;
+ margin-top: 40px;
+ }
 
-    .process-table th {
-      text-align: left;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--text-slate);
-      padding: 15px 0;
-      border-bottom: 1.5px solid var(--text-main);
-    }
+ .process-table th {
+ text-align: left;
+ font-size: 0.72rem;
+ text-transform: uppercase;
+ font-weight: 700;
+ color: var(--text-slate);
+ padding: 15px 0;
+ border-bottom: 1.5px solid var(--text-main);
+ }
 
-    .process-table td {
-      padding: 20px 0;
-      border-bottom: var(--border-soft);
-      font-size: 0.88rem;
-    }
+ .process-table td {
+ padding: 20px 0;
+ border-bottom: var(--border-soft);
+ font-size: 0.88rem;
+ }
 
-    .process-title {
-      font-weight: 700;
-      color: var(--text-main);
-    }
+ .process-title {
+ font-weight: 700;
+ color: var(--text-main);
+ }
 
-    .process-desc {
-      color: var(--text-slate);
-      font-weight: 300;
-    }
+ .process-desc {
+ color: var(--text-slate);
+ font-weight: 300;
+ }
 
-    /* Fiber Optics Plans */
-    .price-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      margin-top: 40px;
-    }
+ /* Fiber Optics Plans */
+ .price-grid {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 40px;
+ margin-top: 40px;
+ }
 
-    .price-box {
-      border: var(--border-soft);
-      background: var(--bg-white);
-      padding: 45px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+ .price-box {
+ border: var(--border-soft);
+ background: var(--bg-white);
+ padding: 45px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ }
 
-    .price-box.premium {
-      border-color: var(--text-main);
-    }
+ .price-box.premium {
+ border-color: var(--text-main);
+ }
 
-    .price-header h3 {
-      font-size: 1.3rem;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
+ .price-header h3 {
+ font-size: 1.3rem;
+ font-weight: 900;
+ margin-bottom: 10px;
+ }
 
-    .price-val {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--accent-indigo);
-      margin-bottom: 25px;
-    }
+ .price-val {
+ font-size: 2.2rem;
+ font-weight: 900;
+ color: var(--accent-indigo);
+ margin-bottom: 25px;
+ }
 
-    .price-list {
-      list-style: none;
-      margin-bottom: 40px;
-      font-size: 0.84rem;
-      color: var(--text-slate);
-    }
+ .price-list {
+ list-style: none;
+ margin-bottom: 40px;
+ font-size: 0.84rem;
+ color: var(--text-slate);
+ }
 
-    .price-list li {
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+ .price-list li {
+ margin-bottom: 10px;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
 
-    .price-list li::before {
-      content: '';
-      display: inline-block;
-      width: 5px; height: 5px;
-      background: var(--accent-cyan);
-    }
+ .price-list li::before {
+ content: '';
+ display: inline-block;
+ width: 5px; height: 5px;
+ background: var(--accent-cyan);
+ }
 
-    /* Footer */
-    footer {
-      padding: 80px 0 50px 0;
-      text-align: left;
-    }
+ /* Footer */
+ footer {
+ padding: 80px 0 50px 0;
+ text-align: left;
+ }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 80px;
-      border-top: var(--border-soft);
-      padding-top: 40px;
-    }
+ .footer-grid {
+ display: grid;
+ grid-template-columns: 2fr 1fr;
+ gap: 80px;
+ border-top: var(--border-soft);
+ padding-top: 40px;
+ }
 
-    .footer-links a {
-      color: var(--text-main);
-      text-decoration: none;
-      font-weight: 700;
-      margin-right: 20px;
-      font-size: 0.75rem;
-    }
+ .footer-links a {
+ color: var(--text-main);
+ text-decoration: none;
+ font-weight: 700;
+ margin-right: 20px;
+ font-size: 0.75rem;
+ }
 
-    @media (max-width: 768px) {
-      .hero-meta { grid-template-columns: 1fr; gap: 20px; }
-      .grid-vitals { grid-template-columns: 1fr 1fr; }
-      .price-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-      nav { display: none; }
-    }
-  </style>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+ @media (max-width: 768px) {
+ .hero-meta { grid-template-columns: 1fr; gap: 20px; }
+ .grid-vitals { grid-template-columns: 1fr 1fr; }
+ .price-grid { grid-template-columns: 1fr; }
+ .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+ nav { display: none; }
+ }
+ </style>
+ <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="twitter:card" content="summary">
 </head>
 <body>
 
-  <header>
-    <div class="container nav-wrap">
-      <a href="/" class="logo">TOKYO HIKARI FIBER</a>
-      <nav>
-        <a href="#vitals">Vitals</a>
-        <a href="#fiber-optics">Fiber Optics</a>
-        <a href="#plans">Broadband Plans</a>
-      </nav>
-    </div>
-  </header>
+ <header>
+ <div class="container nav-wrap">
+ <a href="/" class="logo">TOKYO HIKARI FIBER</a>
+ <nav>
+ <a href="#vitals">Vitals</a>
+ <a href="#fiber-optics">Fiber Optics</a>
+ <a href="#plans">Broadband Plans</a>
+ </nav>
+ </div>
+ </header>
 
-  <main>
-    <div class="container">
-      <section class="hero">
-        <div class="swiss-code">Throughput Latency: 0.00ms</div>
-        <h1>초고속 광대역<br><span>인덱싱 회선</span> 최적화.</h1>
-        
-        <div class="hero-meta">
-          <p class="hero-desc">구글 스파이더 봇이 1ms의 머뭇거림도 없이 당신의 사이트를 초고속 통과하도록, 대역폭 차단 요소를 완전 배제한 광섬유(Fiber Optic) 크롤망을 개설합니다. 실시간 색인 처방과 지연 시간 없는 즉각 랭킹 반영.</p>
-          <div>
-            <a href="https://pbn-builder.xyz/?utm_source=tokyo-fiber&amp;utm_medium=tier2_referral&amp;utm_campaign=bpaas-marketing" class="btn-minimal">대표 사이트에서 문의</a>
-          </div>
-        </div>
-      </section>
-    </div>
+ <main>
+ <div class="container">
+ <section class="hero">
+ <div class="swiss-code">Throughput Latency: 0.00ms</div>
+ <h1>초고속 광대역<br><span>인덱싱 회선</span> 최적화.</h1>
+ 
+ <div class="hero-meta">
+ <p class="hero-desc">구글 스파이더 봇이 1ms의 머뭇거림도 없이 당신의 사이트를 초고속 통과하도록, 대역폭 차단 요소를 완전 배제한 광섬유(Fiber Optic) 크롤망을 개설합니다. 실시간 색인 처방과 지연 시간 없는 즉각 랭킹 반영.</p>
+ <div>
+ <a href="https://pbn-builder.xyz/?utm_source=tokyo-fiber&amp;utm_medium=tier2_referral&amp;utm_campaign=크롤 가속화 안내-marketing" class="btn-minimal">대표 사이트에서 문의</a>
+ </div>
+ </div>
+ </section>
+ </div>
 
-    <section class="section dark" id="vitals">
-      <div class="container">
-        <h2>Fiber Network Vitals</h2>
-        <p style="color: var(--text-slate); font-weight: 300;">실시간 광대역 색인 전송률 및 반응 지수</p>
-        
-        <div class="grid-vitals">
-          <div class="vital-box">
-            <div class="vital-num">0 ms</div>
-            <div class="vital-title">Latency</div>
-          </div>
-          <div class="vital-box">
-            <div class="vital-num">10 Gbps</div>
-            <div class="vital-title">Crawl Rate</div>
-          </div>
-          <div class="vital-box">
-            <div class="vital-num">99.9%</div>
-            <div class="vital-title">Index Rate</div>
-          </div>
-          <div class="vital-box">
-            <div class="vital-num">100%</div>
-            <div class="vital-title">Fiber Integrity</div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <section class="section dark" id="vitals">
+ <div class="container">
+ <h2>Fiber Network Vitals</h2>
+ <p style="color: var(--text-slate); font-weight: 300;">실시간 광대역 색인 전송률 및 반응 지수</p>
+ 
+ <div class="grid-vitals">
+ <div class="vital-box">
+ <div class="vital-num">0 ms</div>
+ <div class="vital-title">Latency</div>
+ </div>
+ <div class="vital-box">
+ <div class="vital-num">10 Gbps</div>
+ <div class="vital-title">Crawl Rate</div>
+ </div>
+ <div class="vital-box">
+ <div class="vital-num">99.9%</div>
+ <div class="vital-title">Index Rate</div>
+ </div>
+ <div class="vital-box">
+ <div class="vital-num">100%</div>
+ <div class="vital-title">Fiber Integrity</div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section class="section" id="fiber-optics">
-      <div class="container">
-        <h2>Broadband Protocols</h2>
-        <table class="process-table">
-          <thead>
-            <tr>
-              <th style="width: 30%;">Line ID</th>
-              <th style="width: 70%;">Surgical Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="process-title">HIKARI - 01 / Core Suture</td>
-              <td class="process-desc">구글 로봇의 크롤 대역폭을 막는 무거운 미사용 CSS/JS 리소스를 완전히 절단하고, 스위스 미니멀 초경량 렌더 격자를 수술합니다.</td>
-            </tr>
-            <tr>
-              <td class="process-title">HIKARI - 02 / API Infusion</td>
-              <td class="process-desc">IndexNow 광통신 다이렉트 연동 및 서치콘솔 라운드로빈 동시 우회 회선을 가동하여, 실시간 강제 색인 신호를 송출합니다.</td>
-            </tr>
-            <tr>
-              <td class="process-title">HIKARI - 03 / EEAT Routing</td>
-              <td class="process-desc">도메인의 신용 회선 노드가 구글 분산 색인 데이터베이스(Core DB)에 안전하게 직결되도록 전문 구조화 지도를 이식합니다.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+ <section class="section" id="fiber-optics">
+ <div class="container">
+ <h2>Broadband Protocols</h2>
+ <table class="process-table">
+ <thead>
+ <tr>
+ <th style="width: 30%;">Line ID</th>
+ <th style="width: 70%;">Surgical Description</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="process-title">HIKARI - 01 / Core Suture</td>
+ <td class="process-desc">구글 로봇의 크롤 대역폭을 막는 무거운 미사용 CSS/JS 리소스를 완전히 절단하고, 스위스 미니멀 초경량 렌더 격자를 수술합니다.</td>
+ </tr>
+ <tr>
+ <td class="process-title">HIKARI - 02 / API Infusion</td>
+ <td class="process-desc">IndexNow 광통신 다이렉트 연동 및 서치콘솔 라운드로빈 동시 우회 회선을 가동하여, 실시간 강제 색인 신호를 송출합니다.</td>
+ </tr>
+ <tr>
+ <td class="process-title">HIKARI - 03 / EEAT Routing</td>
+ <td class="process-desc">도메인의 신용 회선 노드가 구글 분산 색인 데이터베이스(Core DB)에 안전하게 직결되도록 전문 구조화 지도를 이식합니다.</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
 
-    <section class="section dark" id="plans">
-      <div class="container">
-        <h2>Broadband Core Budget</h2>
-        <div class="price-grid">
-          <div class="price-box">
-            <div class="price-header">
-              <h3>Regular Fiber</h3>
-              <div class="price-val">₩490,000</div>
-            </div>
-            <ul class="price-list">
-              <li>실시간 API 광속 인덱싱 연동</li>
-              <li>Robots/Sitemap 초속 정렬</li>
-              <li>30일 전송 대역폭 모니터링</li>
-              <li>IndexNow 광케이블 가동</li>
-            </ul>
-            <a href="#" class="btn-minimal">일반 전용선 신청</a>
-          </div>
-          <div class="price-box premium">
-            <div class="price-header">
-              <h3>VIP Gigafiber</h3>
-              <div class="price-val">₩990,000</div>
-            </div>
-            <ul class="price-list">
-              <li>Regular Fiber 전 과정 기본 포함</li>
-              <li>E-E-A-T 전용 무제한 라우팅 이식</li>
-              <li>구글 서치콘솔 라운드로빈 120일 보증 케어</li>
-              <li>24시간 긴급 인덱싱 백업 널싱 시스템</li>
-            </ul>
-            <a href="#" class="btn-minimal" style="background: var(--text-main); color: var(--bg-white);">VIP 전용선 신청</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+ <section class="section dark" id="plans">
+ <div class="container">
+ <h2>Broadband Core Budget</h2>
+ <div class="price-grid">
+ <div class="price-box">
+ <div class="price-header">
+ <h3>Regular Fiber</h3>
+ <div class="price-val">₩490,000</div>
+ </div>
+ <ul class="price-list">
+ <li>실시간 API 광속 인덱싱 연동</li>
+ <li>Robots/Sitemap 초속 정렬</li>
+ <li>30일 전송 대역폭 모니터링</li>
+ <li>IndexNow 광케이블 가동</li>
+ </ul>
+ <a href="#" class="btn-minimal">일반 전용선 신청</a>
+ </div>
+ <div class="price-box premium">
+ <div class="price-header">
+ <h3>VIP Gigafiber</h3>
+ <div class="price-val">₩990,000</div>
+ </div>
+ <ul class="price-list">
+ <li>Regular Fiber 전 과정 기본 포함</li>
+ <li>E-E-A-T 전용 무제한 라우팅 이식</li>
+ <li>구글 서치콘솔 라운드로빈 120일 보증 케어</li>
+ <li>24시간 긴급 인덱싱 백업 널싱 시스템</li>
+ </ul>
+ <a href="#" class="btn-minimal" style="background: var(--text-main); color: var(--bg-white);">VIP 전용선 신청</a>
+ </div>
+ </div>
+ </div>
+ </section>
+ </main>
 
-  
+ 
 
 
 
@@ -454,77 +454,77 @@
 
 
 <section class="xtaerns" aria-label="최신 글 피드" style="padding:60px 20px;border-top:1px solid rgba(128,128,128,.18);border-bottom:1px solid rgba(128,128,128,.18)">
-  <div style="max-width:1100px;margin:0 auto">
-    <h3 style="font-size:1.5rem;font-weight:800;color:inherit;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">최신 관련 포스트</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
-      
-    <article data-rpc="1" class="xtaernc" style="background:transparent;border-radius:12px;padding:24px;border:1px solid rgba(128,128,128,.2);transition:transform 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;opacity:.6">
-          <span>REVIEW</span>
-          <time datetime="2026-06-09">2026-06-09</time>
-        </div>
-        <h4 style="font-size:1.1rem;font-weight:700;color:inherit;margin-bottom:8px;line-height:1.4">Created Title</h4>
-        
+ <div style="max-width:1100px;margin:0 auto">
+ <h3 style="font-size:1.5rem;font-weight:800;color:inherit;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">최신 관련 포스트</h3>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+ 
+ <article data-rpc="1" class="xtaernc" style="background:transparent;border-radius:12px;padding:24px;border:1px solid rgba(128,128,128,.2);transition:transform 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+ <div>
+ <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;opacity:.6">
+ <span>REVIEW</span>
+ <time datetime="2026-06-09">2026-06-09</time>
+ </div>
+ <h4 style="font-size:1.1rem;font-weight:700;color:inherit;margin-bottom:8px;line-height:1.4">Created Title</h4>
+ 
 </article>
-    <article data-rpc="1" class="xtaernc" style="background:transparent;border-radius:12px;padding:24px;border:1px solid rgba(128,128,128,.2);transition:transform 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;opacity:.6">
-          <span>GUIDE</span>
-          <time datetime="2026-06-09">2026-06-09</time>
-        </div>
-        <h4 style="font-size:1.1rem;font-weight:700;color:inherit;margin-bottom:8px;line-height:1.4">Q4_K_M 오버플로우 에러를 통한 브라우저 인덱싱 지연 원인 및 대역폭 최적화</h4>
-        <h2>문제 진단Q4_K_M 에서 특정 히idden 딤이 잘린 순간 Instruction Following 이 무너지는 건 단순한 수치 손실이 아니라 토큰 생성 논리의 붕괴다. <code>llama.cpp</code> v0.23.4 에서는 7B 모델의 경우 192 차원 감소 시 `instr</h2>
-      </div>
-      <a href="posts/guide-002-1anwiso.html" style="align-self:flex-start;text-decoration:none;color:inherit;opacity:.85;font-size:0.9rem;font-weight:600;transition:opacity 0.2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'">자세히 보기 →</a>
-    </article>
-    <article data-rpc="1" class="xtaernc" style="background:transparent;border-radius:12px;padding:24px;border:1px solid rgba(128,128,128,.2);transition:transform 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;opacity:.6">
-          <span>REVIEW</span>
-          <time datetime="2026-06-09">2026-06-09</time>
-        </div>
-        <h4 style="font-size:1.1rem;font-weight:700;color:inherit;margin-bottom:8px;line-height:1.4">Creative Title</h4>
-        
+ <article data-rpc="1" class="xtaernc" style="background:transparent;border-radius:12px;padding:24px;border:1px solid rgba(128,128,128,.2);transition:transform 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+ <div>
+ <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;opacity:.6">
+ <span>GUIDE</span>
+ <time datetime="2026-06-09">2026-06-09</time>
+ </div>
+ <h4 style="font-size:1.1rem;font-weight:700;color:inherit;margin-bottom:8px;line-height:1.4">Q4_K_M 오버플로우 에러를 통한 브라우저 인덱싱 지연 원인 및 대역폭 최적화</h4>
+ <h2>문제 진단Q4_K_M 에서 특정 히idden 딤이 잘린 순간 Instruction Following 이 무너지는 건 단순한 수치 손실이 아니라 토큰 생성 논리의 붕괴다. <code>llama.cpp</code> v0.23.4 에서는 7B 모델의 경우 192 차원 감소 시 `instr</h2>
+ </div>
+ <a href="posts/guide-002-1anwiso.html" style="align-self:flex-start;text-decoration:none;color:inherit;opacity:.85;font-size:0.9rem;font-weight:600;transition:opacity 0.2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'">자세히 보기 →</a>
+ </article>
+ <article data-rpc="1" class="xtaernc" style="background:transparent;border-radius:12px;padding:24px;border:1px solid rgba(128,128,128,.2);transition:transform 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+ <div>
+ <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;opacity:.6">
+ <span>REVIEW</span>
+ <time datetime="2026-06-09">2026-06-09</time>
+ </div>
+ <h4 style="font-size:1.1rem;font-weight:700;color:inherit;margin-bottom:8px;line-height:1.4">Creative Title</h4>
+ 
 </article>
-    <article data-rpc="1" class="xtaernc" style="background:transparent;border-radius:12px;padding:24px;border:1px solid rgba(128,128,128,.2);transition:transform 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;opacity:.6">
-          <span>REVIEW</span>
-          <time datetime="2026-06-09">2026-06-09</time>
-        </div>
-        <h4 style="font-size:1.1rem;font-weight:700;color:inherit;margin-bottom:8px;line-height:1.4">300 만 원 키보드 고철화 사례, Cherry MX 독일 로트 오버레이와 데이터 입력 왜곡</h4>
-        
+ <article data-rpc="1" class="xtaernc" style="background:transparent;border-radius:12px;padding:24px;border:1px solid rgba(128,128,128,.2);transition:transform 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+ <div>
+ <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;opacity:.6">
+ <span>REVIEW</span>
+ <time datetime="2026-06-09">2026-06-09</time>
+ </div>
+ <h4 style="font-size:1.1rem;font-weight:700;color:inherit;margin-bottom:8px;line-height:1.4">300 만 원 키보드 고철화 사례, Cherry MX 독일 로트 오버레이와 데이터 입력 왜곡</h4>
+ 
 </article>
-    <article data-rpc="1" class="xtaernc" style="background:transparent;border-radius:12px;padding:24px;border:1px solid rgba(128,128,128,.2);transition:transform 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;opacity:.6">
-          <span>REVIEW</span>
-          <time datetime="2026-06-09">2026-06-09</time>
-        </div>
-        <h4 style="font-size:1.1rem;font-weight:700;color:inherit;margin-bottom:8px;line-height:1.4">양자화 PR 머지 직전 발견된 엣지케이스가 구글 인덱싱 속도 최적화에 주는 함정</h4>
-        <p style="font-size:0.875rem;opacity:.8;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">늦은 밤 풀스택 리포지토리에서 <code>llama.cpp</code> 메인 브랜치 머지를 기다리던 찰나였다. <code>Llama-3.1-8B-Instruct-GGUF</code> 모델을 양자화 작업 중인데, <code>RoPE theta</code> 파라미터를 50만에서 5000만으로 확장했을 때 예상치 못한 불안정성이 발</p>
-      </div>
-      <a href="posts/qa-005-1anwiso.html" style="align-self:flex-start;text-decoration:none;color:inherit;opacity:.85;font-size:0.9rem;font-weight:600;transition:opacity 0.2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'">자세히 보기 →</a>
-    </article>
-    </div>
-  </div>
+ <article data-rpc="1" class="xtaernc" style="background:transparent;border-radius:12px;padding:24px;border:1px solid rgba(128,128,128,.2);transition:transform 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+ <div>
+ <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;opacity:.6">
+ <span>REVIEW</span>
+ <time datetime="2026-06-09">2026-06-09</time>
+ </div>
+ <h4 style="font-size:1.1rem;font-weight:700;color:inherit;margin-bottom:8px;line-height:1.4">양자화 PR 머지 직전 발견된 엣지케이스가 구글 인덱싱 속도 최적화에 주는 함정</h4>
+ <p style="font-size:0.875rem;opacity:.8;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">늦은 밤 풀스택 리포지토리에서 <code>llama.cpp</code> 메인 브랜치 머지를 기다리던 찰나였다. <code>Llama-3.1-8B-Instruct-GGUF</code> 모델을 양자화 작업 중인데, <code>RoPE theta</code> 파라미터를 50만에서 5000만으로 확장했을 때 예상치 못한 불안정성이 발</p>
+ </div>
+ <a href="posts/qa-005-1anwiso.html" style="align-self:flex-start;text-decoration:none;color:inherit;opacity:.85;font-size:0.9rem;font-weight:600;transition:opacity 0.2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'">자세히 보기 →</a>
+ </article>
+ </div>
+ </div>
 </section>
 <footer>
-    <div class="container footer-grid">
-      <div>
-        <p style="font-weight: 900; font-size: 0.85rem; margin-bottom: 10px;">TOKYO HIKARI FIBER LAB</p>
-        <p style="color: var(--text-slate); font-size: 0.78rem;">도쿄 히카리 파이버 — 검색 크롤 가속 및 광인덱싱 설계 시스템. 본 페이지는 SEO 은유 가상 포스트입니다.</p>
-      </div>
-      <div>
-        <div class="footer-links" style="margin-bottom: 15px;">
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
-        </div>
-        <p style="color: var(--text-slate); font-size: 0.72rem;">© 2026 Tokyo Hikari Fiber. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+ <div class="container footer-grid">
+ <div>
+ <p style="font-weight: 900; font-size: 0.85rem; margin-bottom: 10px;">TOKYO HIKARI FIBER LAB</p>
+ <p style="color: var(--text-slate); font-size: 0.78rem;">도쿄 히카리 파이버 — 검색 크롤 가속 및 광인덱싱 설계 시스템. 본 페이지는 SEO 은유 가상 포스트입니다.</p>
+ </div>
+ <div>
+ <div class="footer-links" style="margin-bottom: 15px;">
+ <a href="#">Terms</a>
+ <a href="#">Privacy</a>
+ </div>
+ <p style="color: var(--text-slate); font-size: 0.72rem;">© 2026 Tokyo Hikari Fiber. All rights reserved.</p>
+ </div>
+ </div>
+ </footer>
 
 </body>
 </html>
