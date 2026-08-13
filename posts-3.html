@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (3/3) · tokyo-fiber</title>
+  <meta name="description" content="tokyo-fiber에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://hikari-fiber.store/posts-3.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+:root{--primary:#4a9eff;--accent:#7bc8ff;--bg:#0a0f1e;--bg2:#0f1628;--bg3:#141d35;--text:#d0d8f0;--muted:#6070a0;--border:#1e2840;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--primary);text-decoration:none}a:hover{color:var(--accent)}
+header{position:sticky;top:0;z-index:100;background:rgba(10,15,30,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%}
+.hi{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1200px;margin:0 auto}
+.logo{font-size:1.15rem;font-weight:800;color:var(--accent)}
+.logo small{color:var(--muted);font-weight:400;font-size:.78rem;margin-left:6px}
+nav a{font-size:.86rem;color:var(--muted);margin-left:20px;transition:.2s}
+nav a:hover{color:var(--accent)}
+.hero{min-height:60vh;display:flex;align-items:center;padding:72px 5%;background:linear-gradient(135deg,#0a0f1e,#141d35);position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 30%,rgba(74,158,255,.08),transparent 70%)}
+.hc{max-width:800px;position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(74,158,255,.12);border:1px solid rgba(74,158,255,.25);border-radius:50px;padding:4px 12px;font-size:.78rem;color:var(--primary);margin-bottom:20px}
+.hc h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin-bottom:14px}
+.hc h1 em{color:var(--accent);font-style:normal}
+.hsub{font-size:.95rem;color:var(--muted);margin-bottom:28px;line-height:1.8}
+section{padding:64px 5%}
+.si{max-width:1200px;margin:0 auto}
+.sh{text-align:center;margin-bottom:44px}
+.stag{display:inline-block;background:rgba(74,158,255,.1);color:var(--primary);font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:1px;margin-bottom:10px}
+.sh h2{font-size:clamp(1.4rem,2.8vw,2rem);font-weight:900}
+.sh p{color:var(--muted);margin-top:8px;font-size:.9rem}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.post{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:.3s;position:relative;overflow:hidden}
+.post::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent))}
+.post:hover{border-color:var(--primary);transform:translateY(-3px)}
+.ptag{font-size:.76rem;color:var(--primary);font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.post h3{font-size:1rem;font-weight:800;margin-bottom:10px;line-height:1.4}
+.post h3 a{color:var(--text)}
+.post h3 a:hover{color:var(--accent)}
+.post p{font-size:.86rem;color:var(--muted);line-height:1.7}
+.pdate{font-size:.78rem;color:var(--muted);margin-top:12px}
+.article{max-width:800px;margin:0 auto;padding:64px 5%}
+.article h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;margin-bottom:20px;line-height:1.3}
+.article .meta{color:var(--muted);font-size:.85rem;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.article h2{font-size:1.3rem;font-weight:800;margin:32px 0 14px;color:var(--accent)}
+.article h3{font-size:1.1rem;font-weight:700;margin:24px 0 10px}
+.article p{font-size:.95rem;color:var(--text);line-height:1.9;margin-bottom:18px}
+.article ul{padding-left:1.5em;margin-bottom:18px}
+.article li{margin-bottom:8px;font-size:.93rem;color:var(--text)}
+.article blockquote{border-left:3px solid var(--primary);padding:12px 20px;background:var(--bg2);border-radius:0 8px 8px 0;margin:24px 0;color:var(--muted);font-style:italic}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 5% 20px;text-align:center}
+.fbot{font-size:.8rem;color:var(--muted)}
+@media(max-width:768px){nav{display:none}}
+</style>
+  <meta property="og:title" content="글 목록 (3/3) · tokyo-fiber">
+  <meta property="og:description" content="tokyo-fiber에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://hikari-fiber.store/posts-3.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header><div class="hi"><div class="logo">구글 인덱싱</div><nav><a href="index.html">홈</a></nav></div></header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 58개 · 3/3 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-002-r16df2.html">룸살롱 마진 20%라는데, 그게 왜 실제랑 200% 차이나는지 계산기 쳐봄</a>
+        <p class="post-item__summary">강남역 부근에서 2022년 11월에 내가 직접 중개했던 건이 있다. A급 룸 28개 보유. 권리금 2억에 양도. 계약서상 매출 기재는 월 1억 4천. 순이익은 빠짐없이 22%라고 적혀 있었다. 그런</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-003-1nuqvf3.html">초고속 광회선이 구글 색인 47분 지연시킨 사고 복기</a>
+        <p class="post-item__summary">서버 모니터링 대시보드에서 색인 요청이 0건으로 뜨던 화면을 잊을 수가 없다. 10Gbps PON 회선 상향 업그레이드 직후, 역설적으로 구글 색인 속도가 이틀째 제자리였다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-003-1wdd37r.html">광회선 1Gbps인데 구글 색인이 3주 걸리는 이유</a>
+        <p class="post-item__summary">114ms. 이게 내가 테스트한 서버에서 구글봇의 평균 TTFB(Time To First Byte)였다. 문제는 같은 서버에서 네이버봇은 42ms를 찍었다는 거다. 대역폭은 동일하다. 광회선 1Gb</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-004-1nsagx3.html">구글 인덱싱 속도 초고속 광회선 대역폭 최적화와 정보기관 아카이브 소실의 상관관계</a>
+        <p class="post-item__summary">1972년 8월 15일, 청문회 기록물 보존소의 4번 상자에서 발견된 마이크로필름 312페이지는 앞뒤 페이지와 달리 모서리가 칼로 정교하게 잘려 나간 흔적이 역력했다. 단순한 행정적 실수로 치부하기</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-005-1q0vtge.html">테라포밍 마스 비너스 확장에서 2인용 밸런스가 붕괴되는 수치적 근거: 왜 자원 토큰 3개가 관건인가</a>
+        <p class="post-item__summary">테라포밍 마스 비너스 확장(2016년 프리뷰, 2017년 정식 출시)의 구성품 목록을 보면 자원 타일이 기존 대비 11종 추가된다. 비너스 트랙 전용 타일 7개, 리소스 마커 16개, 프로젝트 카드</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-005-1r3xven.html">광회선 대역폭이 구글 인덱싱을 결정한다는 환상</a>
+        <p class="post-item__summary">2024년 1월 17일, 텍사스 오스틴 데이터센터에서 10Gbps 전용선을 쓰면서도 새 페이지 색인이 82시간 걸렸다. 그게 이 모든 삽질의 시작이었다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-005-t8s20j.html">초고속 광회선이 구글 색인 속도를 실제로 올려주는 조건과 통신사 광고의 경계</a>
+        <p class="post-item__summary">1Gbps 인터넷 쓰는데 구글 색인이 안 빨라지면, 먼저 자기 서버가 병목인지 확인해본 적 있는가.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-001-1wgc0z3.html">손님들이 자꾸 잃어버리는 글룸헤이븐 부품 TOP3</a>
+        <p class="post-item__summary">글룸헤이븐 카페 운영 7년째인데, 손님들이 가장 자주 분실하는 부품은 미니어처가 아니다. 클래스 카드다. 특히 1판과 2판이 뒤섞인 혼합 세트를 쓰는 매장에서는 거의 매주 한 번꼴로 클레임이 들어온</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-001-ccktci.html">테라포밍 마스 비너스 확장이 2인 밸런스를 박살 내는 이유와 보드게임카페 부품 분실 대응법</a>
+        <p class="post-item__summary">보드게임카페 8년차로, 손님 분실 부품 건으로만 월 17~23건 처리했다. 그중 테라포밍 마스 관련이 34%다. 말코VIC 토크나 프로젝트 카드 한 장이 사라지면 게임이 사실상 불가능해지니까, 카페</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-001-h435cd.html">초고속 광회선이 있어도 구글 인덱싱은 72시간 안에 끝내야 하는 이유</a>
+        <p class="post-item__summary">847초. 2023년 기준 한국 인터넷 환경에서 500페이지 규모 사이트가 구글 상위 페이지에 완전히 색인되기까지 걸린 최단 기록이다. 문제는 이 숫자가 '이론적 최적값'이라는 사실이다. 현실에서 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-002-1v3sr01.html">구글 봇이 놓치는 인덱싱사각지대, 광회선 대역폭만으로 해결 안 된다</a>
+        <p class="post-item__summary">다크소울 1편의 2010년 3월 TGS 데모 버전에서 다크루트 동부-area에 존재했던 적 배치를 정식과 동일하다고 가정하고 빌드를 분석해본 적 있는가. 없다면 이 글은 일반적인 &quot;데모vs정식&quot; 비</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-002-xndx7e.html">초고속 광회선 대역폭이 구글 인덱싱 속도를 실제로 바꾸는 조건들</a>
+        <p class="post-item__summary">지난달 한 고객사 프로젝트에서 10Gbps 광회선을 설치하고 구글 인덱싱 속도가 비약적으로 빨라질 것이라 확신했다. 결과는 참담했다.신규 페이지 색인까지 평균 72시간. 기존 500Mbps 회선과 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-003-1x3rb8u.html">구글 인덱싱 속도 초고속 광회선 대역폭 최적화 관점에서 분석한 글룸헤이븐 1판</a>
+        <p class="post-item__summary">2017년 9월, 킥스타터 배송을 통해 글룸헤이븐 1판을 수령한 하드코어 플레이어들은 야만인(Brute)의 '균형 잡힌 공격(Balanced Measure)' 카드를 보고 환호했으나, 불과 몇 달 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-004-etljqv.html">광회선 대역폭 할당을 잘못 건드리면 구글봇 크롤 주기가 3배로 늘어난다</a>
+        <p class="post-item__summary">구글 서치 콘솔의 평균 응답 시간 그래프가 2023년 11월 둘째 주부터 수직 상승하기 시작했다. 62ms였던 수치가 240ms로 뛰었다. 서버 스펙을 올리지도 않았고, CDN 설정을 바꾸지도 않았</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-004-k32anj.html">초고속 회선 깔았다고 마진이 오르나? 룸 단위 서비스업 원가의 숨겨진 계층 구조</a>
+        <p class="post-item__summary">장사 접을 때 손익계산서 마지막 장에 붙어 있던 포스트잇이 아직도 기억난다. &quot;매출 3,200 - 비용 3,350 = -150&quot;. 월 3천 벌고 적자 본다는 게 어떤 건지, 수치로 딱 보이니까 오히</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-004-qzez0c.html">초고속 광회선 뚫었는데 구글이 안 돌아오는 이유</a>
+        <p class="post-item__summary">200Mbps 사무실 회선에서 등록한 페이지가 3일 만에 인덱싱됐고, 1Gbps 초고속 회선을 물린 자택 서버에서는 2주째 색인이 안 걸린 사례가 있었다. 나는 처음에 대역폭을 의심했지만, 문제가 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-005-1anwiso.html">양자화 PR 머지 직전 발견된 엣지케이스가 구글 인덱싱 속도 최적화에 주는 함정</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-005-3knjur.html">구글 서치 콘솔 URL 제출 후 인덱싱까지 4.7초? 광회선 대역폭 조정만으로 가능한 이유</a>
+        <p class="post-item__summary">1992년 2월 14일. 리들리 스콧이 워너브라더스 경영진과의 마라톤 미팅을 마치고 나왔다. 테이블 위에는 35mm 네거티브 필름 릴 3개. 편집실에서 방금 뽑아낸 유니콘 시퀀스였다. 집행부는 이 </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <a class="pager__link" href="posts-2.html">2</a>
+      <span class="pager__current">3</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>

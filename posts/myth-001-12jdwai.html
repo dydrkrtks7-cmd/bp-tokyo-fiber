@@ -35,6 +35,11 @@
 <p>해결은 표준 <code>aws</code> 커널로 롤백하고 CPU Credit 경고 임계값을 50%로 낮춰 조기 스케일아웃을 유도하는 것이었다. 이 패턴에 대한 상세 디버깅 절차와 전체 인프라 결정 트리는 <a href="https://ghostvessel.space/" target="_blank" rel="noopener noreferrer">공식 가이드 채널</a>에 기록해뒀다.</p>
 <h3>단기 효과 vs 장기 효과<br>단기적으로 Lightsail 비용은 30% 절감됐다. 하지만 장기 인덱싱 속도 저하로 인한 트래픽 손실과 디버깅 인건비가 그 차이를 압도했다. W3C가 HTTP/1.1 지속 연결(Persistent Connection)을 명세에 포함시킨 이유는 단순하다. 세션 유지가 안 되는 연결은 파이프라인 단계에서 병목이 되기 때문이다. (참고: <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html" target="_blank" rel="noopener noreferrer">https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html</a>). 인덱싱 속도 최적화는 대역폭 증설 이전에, '서버가 얼마나 오래 살아 있느냐'를 먼저 체크해야 한다.</h3>
     </article>
-  </main>
+      <nav class="post-pager" aria-label="글 이동">
+      <a class="post-pager__prev" href="../posts/myth-001-10fchxb.html">← 파이트 클럽의 타일러 더든, 알리익스프레스 소품의 반란</a>
+      <a class="post-pager__index" href="../posts.html">글 목록</a>
+      <a class="post-pager__next" href="../posts/myth-001-12zs9gi.html">광회선 대역폭이 구글 인덱싱 속도를 결정한다는 환상에 관하여 →</a>
+    </nav>
+    </main>
 </body>
 </html>

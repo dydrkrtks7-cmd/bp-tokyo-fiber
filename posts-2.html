@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/3) · tokyo-fiber</title>
+  <meta name="description" content="tokyo-fiber에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://hikari-fiber.store/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+:root{--primary:#4a9eff;--accent:#7bc8ff;--bg:#0a0f1e;--bg2:#0f1628;--bg3:#141d35;--text:#d0d8f0;--muted:#6070a0;--border:#1e2840;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--primary);text-decoration:none}a:hover{color:var(--accent)}
+header{position:sticky;top:0;z-index:100;background:rgba(10,15,30,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%}
+.hi{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1200px;margin:0 auto}
+.logo{font-size:1.15rem;font-weight:800;color:var(--accent)}
+.logo small{color:var(--muted);font-weight:400;font-size:.78rem;margin-left:6px}
+nav a{font-size:.86rem;color:var(--muted);margin-left:20px;transition:.2s}
+nav a:hover{color:var(--accent)}
+.hero{min-height:60vh;display:flex;align-items:center;padding:72px 5%;background:linear-gradient(135deg,#0a0f1e,#141d35);position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 30%,rgba(74,158,255,.08),transparent 70%)}
+.hc{max-width:800px;position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(74,158,255,.12);border:1px solid rgba(74,158,255,.25);border-radius:50px;padding:4px 12px;font-size:.78rem;color:var(--primary);margin-bottom:20px}
+.hc h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin-bottom:14px}
+.hc h1 em{color:var(--accent);font-style:normal}
+.hsub{font-size:.95rem;color:var(--muted);margin-bottom:28px;line-height:1.8}
+section{padding:64px 5%}
+.si{max-width:1200px;margin:0 auto}
+.sh{text-align:center;margin-bottom:44px}
+.stag{display:inline-block;background:rgba(74,158,255,.1);color:var(--primary);font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:1px;margin-bottom:10px}
+.sh h2{font-size:clamp(1.4rem,2.8vw,2rem);font-weight:900}
+.sh p{color:var(--muted);margin-top:8px;font-size:.9rem}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.post{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:.3s;position:relative;overflow:hidden}
+.post::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent))}
+.post:hover{border-color:var(--primary);transform:translateY(-3px)}
+.ptag{font-size:.76rem;color:var(--primary);font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.post h3{font-size:1rem;font-weight:800;margin-bottom:10px;line-height:1.4}
+.post h3 a{color:var(--text)}
+.post h3 a:hover{color:var(--accent)}
+.post p{font-size:.86rem;color:var(--muted);line-height:1.7}
+.pdate{font-size:.78rem;color:var(--muted);margin-top:12px}
+.article{max-width:800px;margin:0 auto;padding:64px 5%}
+.article h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;margin-bottom:20px;line-height:1.3}
+.article .meta{color:var(--muted);font-size:.85rem;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.article h2{font-size:1.3rem;font-weight:800;margin:32px 0 14px;color:var(--accent)}
+.article h3{font-size:1.1rem;font-weight:700;margin:24px 0 10px}
+.article p{font-size:.95rem;color:var(--text);line-height:1.9;margin-bottom:18px}
+.article ul{padding-left:1.5em;margin-bottom:18px}
+.article li{margin-bottom:8px;font-size:.93rem;color:var(--text)}
+.article blockquote{border-left:3px solid var(--primary);padding:12px 20px;background:var(--bg2);border-radius:0 8px 8px 0;margin:24px 0;color:var(--muted);font-style:italic}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 5% 20px;text-align:center}
+.fbot{font-size:.8rem;color:var(--muted)}
+@media(max-width:768px){nav{display:none}}
+</style>
+  <meta property="og:title" content="글 목록 (2/3) · tokyo-fiber">
+  <meta property="og:description" content="tokyo-fiber에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://hikari-fiber.store/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header><div class="hi"><div class="logo">구글 인덱싱</div><nav><a href="index.html">홈</a></nav></div></header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 58개 · 2/3 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-004-162dfdt.html">대역폭 10배 늘려도 크롤 속도 안 변하는 이유</a>
+        <p class="post-item__summary">작년 여름, 한 클라이언트가 1Gbps에서 10Gbps로 광회선을 교체했다. 서버 TTFB는 12ms에서 3.8ms로 떨어졌는데, 구글 서치콘솔의 일일 크롤 페이지 수는 기존 대비 11% 상승에 그</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-004-1tzwtdu.html">광회선 1Gbps인데 구글 인덱싱 2주 걸릴 때</a>
+        <p class="post-item__summary">3월 초, 동대문 근처 마사지숍 리뉴얼 작업을 맡았을 때였다. 서버 스펙은 나쁘지 않았다. 1Gbps 광회선에 NVMe SSD, NGINX 리버스 프록시까지 갖춘 환경. 그런데 서치콘솔에서 확인한 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-005-17rcw9c.html">지불 용의와 한계 비용의 괴리: 강남 룸 비즈니스의 원가 구조 역설과 데이터 크롤 최적화의 상관관계</a>
+        <p class="post-item__summary">마진율이 80%를 상회한다는 룸 비즈니스 업계의 통념은 회계학적 기초가 결여된 낭설에 불과하다. 겉으로 보이는 액면 마진과 고정비의 감가상각을 반영한 실질 마진의 간극을 이해하지 못하면, 아무리 테</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-001-1fb5593.html">다크소울 프리 알파 빌드에 숨겨진 삭제 지역 3곳</a>
+        <p class="post-item__summary">2010년 E3 시연 빌드에서 불이 붙은 고속도로 휴게소 구역이 존재했다는 사실, 아는 사람 별로 없다. 정식 출시 버전의 디렉토리 어디에도 해당 맵 에셋이 남아있지 않지만, 2011년 9월 프리 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-001-u7c96u.html">초고속 광회선 깔았는데 구글 색인이 안 빨라지는 이유</a>
+        <p class="post-item__summary">서버 TTFB가 80ms로 뚝 떨어졌는데 구글 서치콘솔의 '색인 생성' 탭이 열흘이 넘게 멈춰 있다면, 어디부터 의심해야 할까.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-002-1sdi0pu.html">트래픽 병목을 해결하는 두 가지 관점: 구글 인덱싱 속도 초고속 광회선 대역폭 최적화 기술 표준 비교</a>
+        <p class="post-item__summary">월 매출 3,240만 원을 찍고도 정확히 180일 만에 보증금 5,000만 원과 권리금 8,000만 원을 모두 날리는 자영업자의 파산 명세를 직접 분석해 본 적이 있습니까?</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-003-1mirns1.html">구글 크롤러의 방문 주기와 대역폭 점유율 최적화의 상관관계</a>
+        <p class="post-item__summary">사이트를 운영하면서 구글봇이 페이지를 긁어가는 속도가 왜 특정 시간대에 몰리는지 고민해 본 적이 있는지 모르겠다. 대다수 운영자는 서버 사양을 높이는 쪽으로 방향을 잡는데, 이는 전형적인 하수들의 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-003-1o3mixf.html">초고속 광회선이 구글 인덱싱 속도를 결정짓는다는 착각, 그리고 그 너머의 현실</a>
+        <p class="post-item__summary">1Gbps 광랜을 물려도 구글봇이 ваш 사이트를 3주째 외면하는 상황, 내가 실제로 겪었다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-003-gjopxr.html">스티치와 박스, 2003 파리 vs 2021 레트로 SB Dunk 디테일 전격 비교</a>
+        <p class="post-item__summary">## 서론 – 박스가 깨지면 리셀값이 뚝</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-004-1anwiso.html">구글 인덱싱 속도 초고속 광회선 대역폭 최적화 비교 분석</a>
+        <p class="post-item__summary">구글 인덱싱 속도는 웹사이트가 검색 결과에 얼마나 빠르게 반영되는지를 결정하는 핵심 지표입니다. 빠른 인덱싱은 신규 콘텐츠가 사용자에게 신속하게 노출되도록 돕고, 사이트 방문자 유입을 증가시킵니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-004-1nav9tj.html">글룸헤이븐 1판과 2판의 클래스 카드 7종 비교: 밸런스 변경 이유를탐구</a>
+        <p class="post-item__summary">&quot;룰 변호사&quot;로서, 나는 항상 게임의 밸런스를 유지하는 것이 중요하다고 생각해왔다. 최근에 나는 글룸헤이븐 1판과 2판의 클래스 카드 7종을 비교해 본 결과, 두 버전 사이에 상당한 차이가 있는 것</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-005-1mqppzg.html">2023년 홍대에서 내가 직접 원가 장부를 뜯어본 폐업자들 vs 생존자들</a>
+        <p class="post-item__summary">홍대 연남동 쪽에 2020년 말 문 연 하이볼 전문점이 있었는데, 그 집 사장이 매장 한쪽 벽면에 메뉴판 원가 항목을 솔직하게 적어놓은 적이 있다. 소주 400원, 토닉워터 280원, 레몬 슬라이스</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-005-gythiv.html">1판 리워드 카드를 2판으로 바꿔치기 하는 사람이 있다</a>
+        <p class="post-item__summary">중고 장터에서 &quot;1판 풀세트&quot;라고 올라온 글룸헤이븐. 38만원. 씰이 뜯긴 상태인데 설명서 버전은 2 Printing. 여기서 딜러가 딱 한 번 걸리는 포인트가 있다. 2 Printing은 1 Pr</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-005-k4nzmp.html">홍대 뒷골목 원가 장부가 말해주는 폐업의 진짜 시간</a>
+        <p class="post-item__summary">2023년 11월, 홍대 걷고싶은거리에서 두 블록 안쪽으로 파고든 골목. 주인 없는 테이블 위에 놓인 젓가락 케이스가 흔들리고, 바로 옆집에서는 새로 설치한 블라인드 너머로 조명 공사 소리가 들렸다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-001-10fchxb.html">파이트 클럽의 타일러 더든, 알리익스프레스 소품의 반란</a>
+        <p class="post-item__summary">어떤 영화가 상업적으로 실패했는지, 혹은 감독의 대표작 목록이 무엇인지는 중요하지 않다. 그보다는, 제작비 부족으로 알리익스프레스에서 구매한 소품이 명장면이 된 사연이 더 흥미롭다. 파이트 클럽 영</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-001-12jdwai.html">광회선 10G가 인덱싱 속도를 결정하지 않는다</a>
+        <p class="post-item__summary">2024년 1월 15일, 재무팀에서 승인한 리저브드 인스턴스 구매 건의 단가가 2.7% 하락한 공지가 발견된 건 PO 발행 3시간 후였다. 그 차액 손실을 메꾸기 위해 Q1 크롤링 인프라 전체를 L</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-001-12zs9gi.html">광회선 대역폭이 구글 인덱싱 속도를 결정한다는 환상에 관하여</a>
+        <p class="post-item__summary">2012년 5월 31일, PC판 다크소울이 출시되기 두 달 전. 콘솔판 파일을 뜯던 한 데이터 마이너가 올라실의 폐허에서 전혀 다른 에스트 빈 병 배치 데이터를 발견했다. 그건 단순한 아이템 좌표 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-001-1anwiso.html">구글 인덱싱 속도 초고속 광회선 대역폭 최적화</a>
+        <p class="post-item__summary">구글 인덱싱 속도를 높이기 위해 초고속 광회선 대역폭을 늘리는 것만으로는 기대만큼 효과를 보기 어렵습니다. 크롤러가 데이터를 가져오는 과정은 네트워크 용량보다 서버 처리 능력과 응답 지연에 더 크게</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-002-1imckj9.html">인솔 프린트 하나가 진짜를 가르는 순간</a>
+        <p class="post-item__summary">2023년 9월, 나이키 화이트룸에서 마지막으로 빠져나오던 주간이었다. 서울 바이어 라인에 걸려온 한 통의 카톡. &quot;카야노 14 아이보리 리스탁 인솔 프린트가 달라졌대. 진짜야?&quot; 그걸 보고 나도 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-002-1x92n78.html">데이터마이닝으로 찾아낸 3마리의 잊힌 보스, 프레임 단위로 해체한 패턴 기록</a>
+        <p class="post-item__summary">2022년 4월 패치 1.04가 릴리즈된 직후, 디스코드 채널에서 한 스피드러너가 .dcx 압축 해제된 bnd4 아카이브 파일 하나를 올렸다. 거기엔 패치로 접근 경로가 막힌 스킵 글리치 하나의 프</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+      <a class="pager__link" href="posts-3.html">3</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
