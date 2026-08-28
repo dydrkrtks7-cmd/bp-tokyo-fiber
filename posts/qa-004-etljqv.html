@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>광회선 대역폭 할당을 잘못 건드리면 구글봇 크롤 주기가 3배로 늘어난다</title>
+  <title>QoS 프리셋이 구글봇을 느리게 하는 이유</title>
 <meta name="description" content="구글 서치 콘솔의 평균 응답 시간 그래프가 2023년 11월 둘째 주부터 수직 상승하기 시작했다. 62ms였던 수치가 240ms로 뛰었다. 서버 스펙을 올리지도 않았고, CDN 설정을 바꾸지도 않았다.">
   <link rel="canonical" href="https://hikari-fiber.store/posts/qa-004-etljqv.html">
   <style>
@@ -16,7 +16,7 @@
     a:hover { text-decoration: underline; }
   </style>
   <meta property="og:url" content="https://hikari-fiber.store/posts/qa-004-etljqv.html">
-  <meta property="og:title" content="광회선 대역폭 할당을 잘못 건드리면 구글봇 크롤 주기가 3배로 늘어난다">
+  <meta property="og:title" content="QoS 프리셋이 구글봇을 느리게 하는 이유">
   <meta property="og:description" content="구글 서치 콘솔의 평균 응답 시간 그래프가 2023년 11월 둘째 주부터 수직 상승하기 시작했다. 62ms였던 수치가 240ms로 뛰었다. 서버 스펙을 올리지도 않았고, CDN 설정을 바꾸지도 않았다.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -26,7 +26,7 @@
     <a href="../index.html">← 목록으로 돌아가기</a>
   </header>
   <main>
-    <h1>광회선 대역폭 할당을 잘못 건드리면 구글봇 크롤 주기가 3배로 늘어난다</h1>
+    <h1>QoS 프리셋이 구글봇을 느리게 하는 이유</h1>
     <article>
       <p>구글 서치 콘솔의 평균 응답 시간 그래프가 2023년 11월 둘째 주부터 수직 상승하기 시작했다. 62ms였던 수치가 240ms로 뛰었다. 서버 스펙을 올리지도 않았고, CDN 설정을 바꾸지도 않았다. 단 하나, 광회선 모뎀의 QoS 프로필을 "게이밍 최적화" 프리셋으로 돌려놓은 게 전부였다. 이게 크롤봇의 DNS 리졸브 타임을 교란시킬 줄은 당시엔 몰랐다.</p>
 <p>## QoS 프리셋이 구글봇을 밀어내는 구조</p>
@@ -44,7 +44,7 @@
       <nav class="post-pager" aria-label="글 이동">
       <a class="post-pager__prev" href="../posts/qa-003-1x3rb8u.html">← 구글 인덱싱 속도 초고속 광회선 대역폭 최적화 관점에서 분석한 글룸헤이븐 1판</a>
       <a class="post-pager__index" href="../posts.html">글 목록</a>
-      <a class="post-pager__next" href="../posts/qa-004-k32anj.html">초고속 회선 깔았다고 마진이 오르나? 룸 단위 서비스업 원가의 숨겨진 계층 구조 →</a>
+      <a class="post-pager__next" href="../posts/qa-004-k32anj.html">룸 단위 서비스업의 원가 구조 →</a>
     </nav>
     </main>
 </body>

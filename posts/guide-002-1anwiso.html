@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Q4_K_M 오버플로우 에러를 통한 브라우저 인덱싱 지연 원인 및 대역폭 최적화</title>
+  <title>양자화 과정에서 숨겨진 차원 잘림이 명령 수행 능력을 무너뜨리는 원인과 재현 조건 분석</title>
 <meta name="description" content="문제 진단 Q4_K_M 에서 특정 히idden 딤이 잘린 순간 Instruction Following 이 무너지는 건 단순한 수치 손실이 아니라 토큰 생성 논리의 붕괴다.">
   <link rel="canonical" href="https://hikari-fiber.store/posts/guide-002-1anwiso.html">
   <style>
@@ -16,7 +16,7 @@
     a:hover { text-decoration: underline; }
   </style>
   <meta property="og:url" content="https://hikari-fiber.store/posts/guide-002-1anwiso.html">
-  <meta property="og:title" content="Q4_K_M 오버플로우 에러를 통한 브라우저 인덱싱 지연 원인 및 대역폭 최적화">
+  <meta property="og:title" content="양자화 과정에서 숨겨진 차원 잘림이 명령 수행 능력을 무너뜨리는 원인과 재현 조건 분석">
   <meta property="og:description" content="문제 진단 Q4_K_M 에서 특정 히idden 딤이 잘린 순간 Instruction Following 이 무너지는 건 단순한 수치 손실이 아니라 토큰 생성 논리의 붕괴다.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -26,7 +26,7 @@
     <a href="../index.html">← 목록으로 돌아가기</a>
   </header>
   <main>
-    <h1>Q4_K_M 오버플로우 에러를 통한 브라우저 인덱싱 지연 원인 및 대역폭 최적화</h1>
+    <h1>양자화 과정에서 숨겨진 차원 잘림이 명령 수행 능력을 무너뜨리는 원인과 재현 조건 분석</h1>
     <article>
       <p><img src="../assets/interior__hero__tokyo-fiber__1344x768__26d689febc096ec9.webp" alt="Q4_K_M 양자화 시뮬레이션과 GPU 메모리 계층 구조 분석도" loading="lazy" width="1344" height="768"></p>
 <h2>문제 진단<br>Q4_K_M 에서 특정 히idden 딤이 잘린 순간 Instruction Following 이 무너지는 건 단순한 수치 손실이 아니라 토큰 생성 논리의 붕괴다. <code>llama.cpp</code> v0.23.4 에서는 7B 모델의 경우 192 차원 감소 시 <code>instruction_following_score</code> 가 0.85 에서 0.65 로 떨어지는 현상을 발견했다. 이는 양자화 과정에서 Q4_K_M 의 스케일링 팩터가 임계값을 넘으면 attention head 의 게이트 활성화가 비선형적으로 왜곡되기 때문이다. 특히 <code>hidden_dim_truncation</code> 이 발생할 경우 모델의 문맥 이해 능력이 급격히 감소하여 프롬프트 준수율이 떨어진다. 2024 년 초에 발견된 이 버그는 7B 클래스 모델에서 가장 빈번하게 발생했으며, 버전 업데이트 시에도 재현되었다.</h2>
@@ -35,7 +35,7 @@
       <nav class="post-pager" aria-label="글 이동">
       <a class="post-pager__prev" href="../posts/guide-002-19z9l78.html">← 『다크소울』 미발매 데모 던전에서 배운, 구글봇이 차단된 스팀 페이지를 긁어모으는 원리</a>
       <a class="post-pager__index" href="../posts.html">글 목록</a>
-      <a class="post-pager__next" href="../posts/guide-002-1qzq13o.html">광회선에서 구글 인덱싱이 느리다면? CDN 캐시 무효화가 병목이다 →</a>
+      <a class="post-pager__next" href="../posts/guide-002-1qzq13o.html">구글봇이 신규 페이지를 수십 시간째 외면하는 이유 →</a>
     </nav>
     </main>
 </body>

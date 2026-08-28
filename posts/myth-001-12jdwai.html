@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>광회선 10G가 인덱싱 속도를 결정하지 않는다 — t3 크레딧 소진 3분 전 커널 패닉이 증명한 반례</title>
+  <title>리저브드 인스턴스 구매 건의 단가 하락으로 인한 문제 해결</title>
 <meta name="description" content="2024년 1월 15일, 재무팀에서 승인한 리저브드 인스턴스 구매 건의 단가가 2.7% 하락한 공지가 발견된 건 PO 발행 3시간 후였다. 그 차액 손실을 메꾸기 위해 Q1 크롤링 인프라 전체를 Lightsail로 강제 전환했다. 이게 문제의 시작이었다.">
   <link rel="canonical" href="https://hikari-fiber.store/posts/myth-001-12jdwai.html">
   <style>
@@ -16,7 +16,7 @@
     a:hover { text-decoration: underline; }
   </style>
   <meta property="og:url" content="https://hikari-fiber.store/posts/myth-001-12jdwai.html">
-  <meta property="og:title" content="광회선 10G가 인덱싱 속도를 결정하지 않는다 — t3 크레딧 소진 3분 전 커널 패닉이 증명한 반례">
+  <meta property="og:title" content="리저브드 인스턴스 구매 건의 단가 하락으로 인한 문제 해결">
   <meta property="og:description" content="2024년 1월 15일, 재무팀에서 승인한 리저브드 인스턴스 구매 건의 단가가 2.7% 하락한 공지가 발견된 건 PO 발행 3시간 후였다. 그 차액 손실을 메꾸기 위해 Q1 크롤링 인프라 전체를 Lightsail로 강제 전환했다. 이게 문제의 시작이었다.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -26,7 +26,7 @@
     <a href="../index.html">← 목록으로 돌아가기</a>
   </header>
   <main>
-    <h1>광회선 10G가 인덱싱 속도를 결정하지 않는다 — t3 크레딧 소진 3분 전 커널 패닉이 증명한 반례</h1>
+    <h1>리저브드 인스턴스 구매 건의 단가 하락으로 인한 문제 해결</h1>
     <article>
       <p>2024년 1월 15일, 재무팀에서 승인한 리저브드 인스턴스 구매 건의 단가가 2.7% 하락한 공지가 발견된 건 PO 발행 3시간 후였다. 그 차액 손실을 메꾸기 위해 Q1 크롤링 인프라 전체를 Lightsail로 강제 전환했다. 이게 문제의 시작이었다.</p>
 <h2>진짜 병목을 찾아라<br>Lightsail 인스턴스에 올린 AMI는 우분투 20.04 기반 커뮤니티 빌드였다. 표준 <code>aws</code> 커널 대신 <code>5.4.0-150-generic</code>을 베이스로 한 이유는 특정 파이썬 네이티브 확장이 의존하는 커널 플래그 때문이었다. 이 선택이 결정적 분기였다.</h2>
@@ -38,9 +38,9 @@
 <h3>단기 효과 vs 장기 효과<br>단기적으로 Lightsail 비용은 30% 절감됐다. 하지만 장기 인덱싱 속도 저하로 인한 트래픽 손실과 디버깅 인건비가 그 차이를 압도했다. W3C가 HTTP/1.1 지속 연결(Persistent Connection)을 명세에 포함시킨 이유는 단순하다. 세션 유지가 안 되는 연결은 파이프라인 단계에서 병목이 되기 때문이다. (참고: <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html" target="_blank" rel="noopener noreferrer">https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html</a>). 인덱싱 속도 최적화는 대역폭 증설 이전에, '서버가 얼마나 오래 살아 있느냐'를 먼저 체크해야 한다.</h3>
     </article>
       <nav class="post-pager" aria-label="글 이동">
-      <a class="post-pager__prev" href="../posts/myth-001-10fchxb.html">← 파이트 클럽의 타일러 더든, 알리익스프레스 소품의 반란</a>
+      <a class="post-pager__prev" href="../posts/myth-001-10fchxb.html">← 파이트 클럽 영화의 성공에 기여한 알리익스프레스 소품</a>
       <a class="post-pager__index" href="../posts.html">글 목록</a>
-      <a class="post-pager__next" href="../posts/myth-001-12zs9gi.html">광회선 대역폭이 구글 인덱싱 속도를 결정한다는 환상에 관하여 →</a>
+      <a class="post-pager__next" href="../posts/myth-001-12zs9gi.html">다크소울 데모 버전에서 발견된 삭제된 튜토리얼 지형과 녹슨 무기의 흔적 →</a>
     </nav>
     </main>
 </body>
