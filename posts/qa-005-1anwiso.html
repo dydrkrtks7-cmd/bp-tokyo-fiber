@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>양자화 PR 머지 직전 발견된 엣지케이스가 구글 인덱싱 속도 최적화에 주는 함정</title>
-<meta name="description" content="늦은 밤 풀스택 리포지토리에서 llama.cpp 메인 브랜치 머지를 기다리던 찰나였다. Llama-3.1-8B-Instruct-GGUF 모델을 양자화 작업 중인데, RoPE theta 파라미터를 50만에서 5000만으로 확장했을 때 예상치 못한 불안정성이 발생했다.">
+  <title>구글 초고속 광인덱싱 최적화 솔루션 안내</title>
+<meta name="description" content="구글 초고속 광인덱싱은 웹페이지가 구글 검색결과에 신속하게 반영되도록 돕는 색인 처리 방식입니다. 일반적인 크롤링보다 짧은 주기로 페이지가 다시 방문되어 있고, 새로운 콘텐츠가 노출되어도 비교적 빠르게 반영될 수 있습니다.">
   <link rel="canonical" href="https://hikari-fiber.store/posts/qa-005-1anwiso.html">
   <style>
     body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
@@ -16,8 +16,8 @@
     a:hover { text-decoration: underline; }
   </style>
   <meta property="og:url" content="https://hikari-fiber.store/posts/qa-005-1anwiso.html">
-  <meta property="og:title" content="양자화 PR 머지 직전 발견된 엣지케이스가 구글 인덱싱 속도 최적화에 주는 함정">
-  <meta property="og:description" content="늦은 밤 풀스택 리포지토리에서 llama.cpp 메인 브랜치 머지를 기다리던 찰나였다. Llama-3.1-8B-Instruct-GGUF 모델을 양자화 작업 중인데, RoPE theta 파라미터를 50만에서 5000만으로 확장했을 때 예상치 못한 불안정성이 발생했다.">
+  <meta property="og:title" content="구글 초고속 광인덱싱 최적화 솔루션 안내">
+  <meta property="og:description" content="구글 초고속 광인덱싱은 웹페이지가 구글 검색결과에 신속하게 반영되도록 돕는 색인 처리 방식입니다. 일반적인 크롤링보다 짧은 주기로 페이지가 다시 방문되어 있고, 새로운 콘텐츠가 노출되어도 비교적 빠르게 반영될 수 있습니다.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
 </head>
@@ -26,21 +26,21 @@
     <a href="../index.html">← 목록으로 돌아가기</a>
   </header>
   <main>
-    <h1>양자화 PR 머지 직전 발견된 엣지케이스가 구글 인덱싱 속도 최적화에 주는 함정</h1>
-    <article>
-      <p><img src="../assets/interior__hero__tokyo-fiber__1344x768__05fd91d204603a7b.webp" alt="Llama 3.1 8B RoPE Theta Tuning GPU Visualization" loading="lazy" width="1344" height="768"></p>
-<p>늦은 밤 풀스택 리포지토리에서 <code>llama.cpp</code> 메인 브랜치 머지를 기다리던 찰나였다. <code>Llama-3.1-8B-Instruct-GGUF</code> 모델을 양자화 작업 중인데, <code>RoPE theta</code> 파라미터를 50만에서 5000만으로 확장했을 때 예상치 못한 불안정성이 발생했다. 일반론으로는 스케일링 인자가 커지면 컨텍스트 길이가 늘어나지만, 실제로는 특정 토큰 구간에서 perplexity 가 급격히 상승하는 현상을 목격했다.</p>
-<h2>Technical Deep Dive: RoPE Scaling & Perplexity Anomalies</h2>
-<p>NVIDIA A10G 와 H100 GPU 에서 재현 조건이 달랐다. FP16 정밀도 유지가 무리였기 때문에 <code>KV_CACHE_OVERFLOW</code> 에러보다 더 미묘한 <code>Attention Sink 토큰 디버깅</code>이 필요했다. 24,000 토크 이후로 어텐션 헤드가 집중되는 구간에서 메모리 대역폭 점유율이 비정상적으로 15% 증가하는 현상을 관측한 바 있다. 이는 단순한 수치 조정이 아니라 하드웨어 특성에 따른 float 연산 오차 누적 문제였다.</p>
-<p><img src="../assets/interior__about__tokyo-fiber__1024x1024__cdd1a2c23804aab5.webp" alt="Perplexity Spike Llama Attention Sink Token Behavior Chart" loading="lazy" width="1024" height="1024"></p>
-<p>구글 인덱싱 속도와 연결하면 흥미로울 것이다. 검색 엔진 내부의 문서 처리 로직이 이 모델의 어텐션 심과 유사한 병목 현상을 겪을 수 있다는 점이다. 즉, <code>초고속 광회선 대역폭 최적화</code>가 실제 데이터 전송 속도뿐만 아니라 처리되는 논리 구조의 안정성에도 영향을 미친다. API 호출 시 대기 시간이 30 밀리스 초 단위로 늘어나는 것도 이 미세한 수치적 불안정 때문일 수 있다.</p>
-<h2>System Level Implication: Bandwidth & Context Management</h2>
-<p>결국 자동완성 기능이 작동하는 순간은 모델이 내부 상태 변수를 얼마나 정교하게 관리하느냐에 달려있다. <code>RoPE theta</code> 가 너무 크면 장기 메모리가 필요한데, 하드웨어 캐시 misses 가 늘어날 테니 말이다. 이번 PR 머지 후 버전 <code>0.1.35-alpha</code> 에서 이 엣지케이스를 우회하는 패치가 적용되리라 예상된다. 효율성을 위해 가장 불필요한 연산을 제거하지 않으면, 그 대가로 발생하는 지연이 전체 처리 시간을 뒤집는 경우가 많으니까.</p>
-    </article>
-      <nav class="post-pager" aria-label="글 이동">
+
+<h1>구글 초고속 광인덱싱 최적화 솔루션 안내</h1>
+<article>
+<h2>구글 초고속 광인덱싱이란?</h2><p>구글 초고속 광인덱싱은 웹페이지가 구글 검색결과에 신속하게 반영되도록 돕는 색인 처리 방식입니다. 일반적인 크롤링보다 짧은 주기로 페이지가 다시 방문되어 있고, 새로운 콘텐츠가 노출되어도 비교적 빠르게 반영될 수 있습니다. 이를 활용하면 신제품 안내, 공지사항, 이벤트 페이지 등 시의성이 중요한 정보를 사용자에게 보다 빠르게 전달할 수 있습니다.</p>
+
+<h2>서비스에서 제공하는 영역</h2><p>이 솔루션은 사이트 내부 페이지 구조를 점검하고, 색인 우선순위를 높이기 위한 요소들을 정리하는 작업을 포함합니다. 또한 사이트맵 구성, 표준 태그 적용, 내부 링크 점검 등 검색엔진이 페이지 내용을 보다 정확하게 파악할 수 있도록 안내합니다. 별도의 서버 운영이 필요하지 않으며, 기존에 운영 중인 웹사이트를 그대로 유지한 상태에서 진행할 수 있습니다.</p>
+
+<h2>진행 절차와 주의사항</h2><p>신청이 접수되면 사이트 현황을 간단히 확인한 뒤 개선 범위를 안내합니다. 이후 표준 태그와 메타 정보를 정리하고, 색인 요청을 일괄 제출하는 순서로 작업이 진행됩니다. 모든 절차는 구글 공식 가이드라인을 따르고 있으며, 검색엔진 정책을 우회하는 방식은 사용하지 않습니다. 따라서 페널티 위험 없이 색인 속도 개선 효과를 기대할 수 있습니다.</p>
+
+<h2>이런 분들에게 적합합니다</h2><p>신규 페이지를 자주 추가하는 사이트, 뉴스나 공지를 즉시 전달해야 하는 페이지, 또는 색인이 지연되어 트래픽 확보에 어려움을 겪고 있는 운영자에게 도움이 됩니다. 기존 검색엔진 최적화 작업과 병행할 수 있으며, 별도의 고가 장비를 도입하지 않아도 적용할 수 있다는 점이 특징입니다.</p>
+</article>
+    <nav class="post-pager" aria-label="글 이동">
       <a class="post-pager__prev" href="../posts/qa-004-qzez0c.html">← 초고속 광회선 뚫었는데 구글이 안 돌아오는 이유</a>
       <a class="post-pager__index" href="../posts.html">글 목록</a>
-      <a class="post-pager__next" href="../posts/qa-005-3knjur.html">블레이드 러너 유니콘 장면의 의미 →</a>
+      <a class="post-pager__next" href="../posts/qa-005-3knjur.html">구글 초고속 광인덱싱, TOKYO HIKARI FIBER로 한 단계 위로 →</a>
     </nav>
     </main>
 </body>

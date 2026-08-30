@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>리저브드 인스턴스 구매 건의 단가 하락으로 인한 문제 해결</title>
-<meta name="description" content="2024년 1월 15일, 재무팀에서 승인한 리저브드 인스턴스 구매 건의 단가가 2.7% 하락한 공지가 발견된 건 PO 발행 3시간 후였다. 그 차액 손실을 메꾸기 위해 Q1 크롤링 인프라 전체를 Lightsail로 강제 전환했다. 이게 문제의 시작이었다.">
+  <title>구글 초고속 광인덱싱을 위한 캐시 적중률 설계 노트</title>
+<meta name="description" content="구글 검색에서 페이지가 빠르게 노출되려면 크롤러가 콘텐츠를 안정적으로 수집해야 하며, 그 첫 단계가 https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html 을 정확히 이해하는 일이다.">
   <link rel="canonical" href="https://hikari-fiber.store/posts/myth-001-12jdwai.html">
   <style>
     body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
@@ -16,8 +16,8 @@
     a:hover { text-decoration: underline; }
   </style>
   <meta property="og:url" content="https://hikari-fiber.store/posts/myth-001-12jdwai.html">
-  <meta property="og:title" content="리저브드 인스턴스 구매 건의 단가 하락으로 인한 문제 해결">
-  <meta property="og:description" content="2024년 1월 15일, 재무팀에서 승인한 리저브드 인스턴스 구매 건의 단가가 2.7% 하락한 공지가 발견된 건 PO 발행 3시간 후였다. 그 차액 손실을 메꾸기 위해 Q1 크롤링 인프라 전체를 Lightsail로 강제 전환했다. 이게 문제의 시작이었다.">
+  <meta property="og:title" content="구글 초고속 광인덱싱을 위한 캐시 적중률 설계 노트">
+  <meta property="og:description" content="구글 검색에서 페이지가 빠르게 노출되려면 크롤러가 콘텐츠를 안정적으로 수집해야 하며, 그 첫 단계가 https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html 을 정확히 이해하는 일이다.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
 </head>
@@ -26,19 +26,22 @@
     <a href="../index.html">← 목록으로 돌아가기</a>
   </header>
   <main>
-    <h1>리저브드 인스턴스 구매 건의 단가 하락으로 인한 문제 해결</h1>
-    <article>
-      <p>2024년 1월 15일, 재무팀에서 승인한 리저브드 인스턴스 구매 건의 단가가 2.7% 하락한 공지가 발견된 건 PO 발행 3시간 후였다. 그 차액 손실을 메꾸기 위해 Q1 크롤링 인프라 전체를 Lightsail로 강제 전환했다. 이게 문제의 시작이었다.</p>
-<h2>진짜 병목을 찾아라<br>Lightsail 인스턴스에 올린 AMI는 우분투 20.04 기반 커뮤니티 빌드였다. 표준 <code>aws</code> 커널 대신 <code>5.4.0-150-generic</code>을 베이스로 한 이유는 특정 파이썬 네이티브 확장이 의존하는 커널 플래그 때문이었다. 이 선택이 결정적 분기였다.</h2>
-<h3>통념의 함정<br>구글 서치 콘솔 크롤링 속도가 낮게 나오자, 모두 '대역폭 부족'을 의심했다. 재무팀 보고서의 결론은 '초고속 광회선 도입'이었다. Cloudflare 캐시 무효화 지연도 네트워크 문제로 분류됐다. 아무도 CPU Credit과 커널 로그를 보지 않았다.</h3>
-<h3>반례의 현장<br>실제 시스템 로그는 완전히 다른 그림을 보여줬다. CPUCreditBalance가 100에서 10으로 급감한 시점이 14시 정각이었다. 14시 2분, dmesg에 <code>watchdog: BUG: soft lockup - CPU#1 stuck for 23s!</code>가 로깅됐다. 정확히 3분 후인 14시 3분, 커널 패닉이 발생하며 Cloudflare 521 에러가 폭주했다.</h3>
-<p>크레딧이 완전히 소진되는 타임스탬프보다 정확히 3분 빠르다. <code>generic</code> 커널의 <code>cpufreq</code> 스케줄러가 t3의 크레딧 기반 강제 스로틀링을 하드웨어 장애로 오인하고 <code>panic_on_rcu_stall</code>을 트리거한 것이다. 대역폭은 한 번도 포화되지 않았다. 서버가 3분마다 죽는데 광회선이 무슨 소용인가.</p>
-<h3>실제 적용 조건<br>이 패턴은 다음 조건에서 100% 재현됐다. 첫째, t3/t2 버스터블 인스턴스에 CPU Credit 한계치에 근접하는 워크로드가 걸릴 것. 둘째, <code>aws</code> 계열이 아닌 <code>generic</code> 또는 <code>virtual</code> 커널을 사용할 것. 셋째, Cloudflare가 <code>cache everything</code> 룰을 청크 전송 없이 사용 중일 것.</h3>
-<p>해결은 표준 <code>aws</code> 커널로 롤백하고 CPU Credit 경고 임계값을 50%로 낮춰 조기 스케일아웃을 유도하는 것이었다. 이 패턴에 대한 상세 디버깅 절차와 전체 인프라 결정 트리는 <a href="https://ghostvessel.space/" target="_blank" rel="noopener noreferrer">공식 가이드 채널</a>에 기록해뒀다.</p>
-<h3>단기 효과 vs 장기 효과<br>단기적으로 Lightsail 비용은 30% 절감됐다. 하지만 장기 인덱싱 속도 저하로 인한 트래픽 손실과 디버깅 인건비가 그 차이를 압도했다. W3C가 HTTP/1.1 지속 연결(Persistent Connection)을 명세에 포함시킨 이유는 단순하다. 세션 유지가 안 되는 연결은 파이프라인 단계에서 병목이 되기 때문이다. (참고: <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html" target="_blank" rel="noopener noreferrer">https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html</a>). 인덱싱 속도 최적화는 대역폭 증설 이전에, '서버가 얼마나 오래 살아 있느냐'를 먼저 체크해야 한다.</h3>
-    </article>
-      <nav class="post-pager" aria-label="글 이동">
-      <a class="post-pager__prev" href="../posts/myth-001-10fchxb.html">← 파이트 클럽 영화의 성공에 기여한 알리익스프레스 소품</a>
+
+<h1>구글 초고속 광인덱싱을 위한 캐시 적중률 설계 노트</h1>
+<article>
+<h2>광인덱싱과 캐시 적중의 관계</h2>
+<p>구글 검색에서 페이지가 빠르게 노출되려면 크롤러가 콘텐츠를 안정적으로 수집해야 하며, 그 첫 단계가 <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html">https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html</a>을 정확히 이해하는 일이다. 캐시 적중률이 높을수록 동일 자원에 대한 재요청이 줄고, 서버 응답 지연이 낮아져 색인 생성 파이프라인이 원활하게 돌아간다. 반대로 캐시가 비효율적이면 크롤러는 매번 원본 서버에 접속해야 하므로 대역폭과 시간 모두 낭비된다.</p>
+<h2>캐시 무효화 타이밍을 다듬는 법</h2>
+<p>상품 상세, 매장 안내, 공지사항처럼 자주 바뀌지 않는 자원은 max-age와 ETag를 함께 지정해 재검증 비용을 낮추는 것이 유리하다. 매주 갱신되는 카테고리 페이지는 짧은 max-age에 must-revalidate를 붙여 신선도를 확보한다. 색인 대상 페이지와 정적 자산의 만료 정책을 분리해 두면 크롤러가 본문과 리소스를 따로 받아오는 비효율도 줄어든다.</p>
+<h2>광인덱싱 단계에서 흔히 놓치는 지점</h2>
+<p>구글봇은 자바스크립트 렌더링 후의 DOM을 기반으로 콘텐츠를 평가하므로, 첫 바이트가 빠른 서버라도 핵심 텍스트가 늦게 그려지면 색인 우선순위가 떨어질 수 있다. 서버 응답 압축, HTTP/2 이상 멀티플렉싱, 중요 CSS 인라인 처리 같은 기본기가 색인 속도를 가른다. 또한 사이트맵과 색인 생성 API는 캐시 정책이 안정된 뒤에 일괄 갱신하는 편이 변경 신호가 명확해진다.</p>
+<h2>운영 점검과 지속적 개선</h2>
+<p>PageSpeed Insights, Search Console의 URL 검사, Lighthouse 감사 결과를 주기적으로 비교하면 캐시와 색인 관련 회귀를 빠르게 잡아낼 수 있다. 응답 헤더에 Cache-Control, Vary, ETag가 의도대로 적용됐는지 로그와 샘플 요청으로 확인하는 습관이 중요하다. 작은 설정 하나가 누적되어 크롤 효율과 검색 가시성 모두를 좌우하기 때문이다.</p>
+<h2>도입을 검토할 때 참고할 자료</h2>
+<p>사양 해석이 헷갈릴 때는 표준 문서와 함께 현장 운영 노트를 함께 읽어보는 편이 시간을 줄여준다. 더 자세한 절차와 사례 정리는 <a href="https://ghostvessel.space/">공식 가이드 채널</a>에서 확인할 수 있다. 캐시 정책과 색인 전략을 함께 다듬으면 동일 트래픽 안에서도 노출 효율이 눈에 띄게 좋아진다.</p>
+</article>
+    <nav class="post-pager" aria-label="글 이동">
+      <a class="post-pager__prev" href="../posts/myth-001-10fchxb.html">← 구글 초고속 광인덱싱 최적화 솔루션 안내</a>
       <a class="post-pager__index" href="../posts.html">글 목록</a>
       <a class="post-pager__next" href="../posts/myth-001-12zs9gi.html">구글 초고속 광인덱싱 최적화 솔루션 →</a>
     </nav>
