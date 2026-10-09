@@ -16,7 +16,12 @@
     a:hover { text-decoration: underline; }
   </style>
   <meta property="og:url" content="https://hikari-fiber.store/posts/guide-004-162dfdt.html">
-  <meta property="og:title" content="대역폭 10배 늘려도 크롤 속도 안 변하는 이유">
+<style data-post-index-reader-style="true">
+div[data-post-index-navigation="true"] { display:block !important; visibility:visible !important; padding:12px 20px; text-align:right; }
+div[data-post-index-navigation="true"] a { display:inline-flex !important; visibility:visible !important; align-items:center; padding:8px 14px; border:1px solid currentColor; border-radius:6px; color:inherit; text-decoration:none; }
+nav.pager, nav.post-pager, nav[data-site-documents="true"] { display:flex !important; visibility:visible !important; flex-wrap:wrap; gap:12px; padding:16px 0; }
+nav.pager a, nav.post-pager a, nav[data-site-documents="true"] a { display:inline-flex !important; visibility:visible !important; align-items:center; padding:6px 10px; color:inherit; }
+</style>  <meta property="og:title" content="대역폭 10배 늘려도 크롤 속도 안 변하는 이유">
   <meta property="og:description" content="작년 여름, 한 클라이언트가 1Gbps에서 10Gbps로 광회선을 교체했다. 서버 TTFB는 12ms에서 3.8ms로 떨어졌는데, 구글 서치콘솔의 일일 크롤 페이지 수는 기존 대비 11% 상승에 그쳤다. 10배 대역폭에 11% 개선이라니. ROI가 말이 안 된다.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -46,9 +51,9 @@
 <p>셋째, robots.txt의 TTFB를 별도로 확인했는가? 구글봇은 사이트 접속 시 가장 먼저 robots.txt를 요청한다. 이 파일 응답이 500ms를 넘으면 전체 도메인의 크롤 배당이 깎인다. 서버가 아무리 빨라도 robots.txt만 느리면 무용지물이다.</p>
     </article>
       <nav class="post-pager" aria-label="글 이동">
-      <a class="post-pager__prev" href="../posts/guide-003-8bqkoh.html">← 구글 초고속 광인덱싱으로 페이지 노출을 끝까지 끌어올리는 방법</a>
+      <a class="post-pager__prev" href="guide-003-8bqkoh.html">← 구글 초고속 광인덱싱으로 페이지 노출을 끝까지 끌어올리는 방법</a>
       <a class="post-pager__index" href="../posts.html">글 목록</a>
-      <a class="post-pager__next" href="../posts/guide-004-1tzwtdu.html">광회선 1Gbps인데 구글 인덱싱 2주 걸릴 때 →</a>
+      <a class="post-pager__next" href="guide-004-1tzwtdu.html">광회선 1Gbps인데 구글 인덱싱 2주 걸릴 때 — 크롤 가속화 실전 점검 기록 →</a>
     </nav>
     </main>
 </body>
