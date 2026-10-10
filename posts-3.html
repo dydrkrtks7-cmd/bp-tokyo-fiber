@@ -55,8 +55,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 5% 
 @media(max-width:768px){nav{display:none}}
 </style>
   <style data-post-index-reader-style="true">
-div[data-post-index-navigation="true"] { display:block !important; visibility:visible !important; padding:12px 20px; text-align:right; }
-div[data-post-index-navigation="true"] a { display:inline-flex !important; visibility:visible !important; align-items:center; padding:8px 14px; border:1px solid currentColor; border-radius:6px; color:inherit; text-decoration:none; }
+div[data-post-index-navigation="true"] { display:block !important; visibility:visible !important; position:fixed; right:16px; bottom:16px; z-index:1001; max-width:calc(100% - 32px); padding:0; text-align:right; }
+div[data-post-index-navigation="true"] a { display:inline-flex !important; visibility:visible !important; align-items:center; padding:8px 14px; border:1px solid currentColor; border-radius:6px; background:Canvas; color:CanvasText; text-decoration:none; }
 nav.pager, nav.post-pager, nav[data-site-documents="true"] { display:flex !important; visibility:visible !important; flex-wrap:wrap; gap:12px; padding:16px 0; }
 nav.pager a, nav.post-pager a, nav[data-site-documents="true"] a { display:inline-flex !important; visibility:visible !important; align-items:center; padding:6px 10px; color:inherit; }
 </style>
@@ -97,7 +97,7 @@ nav.pager a, nav.post-pager a, nav[data-site-documents="true"] a { display:inlin
       </li>
       <li class="post-item">
         <a class="post-item__link" href="posts/myth-003-1wdd37r.html">광회선 1Gbps인데 구글 색인이 3주 걸리는 이유</a>
-        <p class="post-item__summary">114ms. 이게 내가 테스트한 서버에서 구글봇의 평균 TTFB(Time To First Byte)였다. 문제는 같은 서버에서 네이버봇은 42ms를 찍었다는 거다. 대역폭은 동일하다. 광회선 1Gb</p>
+        <p class="post-item__summary">114ms. 이게 내가 테스트한 서버에서 구글봇의 평균 TTFB(Time To First Byte)였다. 문제는 같은 서버에서 네이버봇은 42ms를 찍었다는 거다. 대역폭은 동일했다. 광회선 1Gb</p>
       </li>
       <li class="post-item">
         <a class="post-item__link" href="posts/myth-004-1nsagx3.html">1972년 의회 청문회에서 누락된 서브프로젝트에 대한 분석</a>
@@ -133,7 +133,7 @@ nav.pager a, nav.post-pager a, nav[data-site-documents="true"] a { display:inlin
       </li>
       <li class="post-item">
         <a class="post-item__link" href="posts/qa-002-xndx7e.html">초고속 광회선 대역폭이 구글 인덱싱 속도를 실제로 바꾸는 조건들 — CDN·서버 응답시간·robots.txt 처리 순서까지</a>
-        <p class="post-item__summary">지난달 한 고객사 프로젝트에서 10Gbps 광회선을 설치하고 구글 인덱싱 속도가 비약적으로 빨라질 것이라 확신했다. 결과는 참담했다.신규 페이지 색인까지 평균 72시간. 기존 500Mbps 회선과 </p>
+        <p class="post-item__summary">지난달 프로젝트에서 10Gbps 광회선을 설치하면 구글봇의 크롤링과 인덱싱이 비약적으로 빨라질 것이라 예상했습니다.하지만 실제 결과는 신규 페이지 색인까지 평균 72시간이 걸리며 기존 500Mbps</p>
       </li>
       <li class="post-item">
         <a class="post-item__link" href="posts/qa-003-1x3rb8u.html">검색 결과 상위 노출, 구글 인덱싱 속도가 전부입니다</a>

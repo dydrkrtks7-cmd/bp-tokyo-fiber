@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>광회선 1Gbps인데 구글 인덱싱 2주 걸릴 때 — 크롤 가속화 실전 점검 기록</title>
-<meta name="description" content="3월 초, 동대문 근처 마사지숍 리뉴얼 작업을 맡았을 때였다. 서버 스펙은 나쁘지 않았다. 1Gbps 광회선에 NVMe SSD, NGINX 리버스 프록시까지 갖춘 환경. 그런데 서치콘솔에서 확인한 색인 생성 속도는 형편없었다.">
+<meta name="description" content="광회선 대역폭 문제와 서버 응답 품질, 사이트맵 규격 초과, 리다이렉트 체인을 구분하여 구글봇 크롤링 및 색인 속도를 진단하고 개선한 실전 점검 사례입니다.">
   <link rel="canonical" href="https://hikari-fiber.store/posts/guide-004-1tzwtdu.html">
   <style>
     body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
@@ -17,12 +17,12 @@
   </style>
   <meta property="og:url" content="https://hikari-fiber.store/posts/guide-004-1tzwtdu.html">
 <style data-post-index-reader-style="true">
-div[data-post-index-navigation="true"] { display:block !important; visibility:visible !important; padding:12px 20px; text-align:right; }
-div[data-post-index-navigation="true"] a { display:inline-flex !important; visibility:visible !important; align-items:center; padding:8px 14px; border:1px solid currentColor; border-radius:6px; color:inherit; text-decoration:none; }
+div[data-post-index-navigation="true"] { display:block !important; visibility:visible !important; position:fixed; right:16px; bottom:16px; z-index:1001; max-width:calc(100% - 32px); padding:0; text-align:right; }
+div[data-post-index-navigation="true"] a { display:inline-flex !important; visibility:visible !important; align-items:center; padding:8px 14px; border:1px solid currentColor; border-radius:6px; background:Canvas; color:CanvasText; text-decoration:none; }
 nav.pager, nav.post-pager, nav[data-site-documents="true"] { display:flex !important; visibility:visible !important; flex-wrap:wrap; gap:12px; padding:16px 0; }
 nav.pager a, nav.post-pager a, nav[data-site-documents="true"] a { display:inline-flex !important; visibility:visible !important; align-items:center; padding:6px 10px; color:inherit; }
 </style>  <meta property="og:title" content="광회선 1Gbps인데 구글 인덱싱 2주 걸릴 때 — 크롤 가속화 실전 점검 기록">
-  <meta property="og:description" content="3월 초, 동대문 근처 마사지숍 리뉴얼 작업을 맡았을 때였다. 서버 스펙은 나쁘지 않았다. 1Gbps 광회선에 NVMe SSD, NGINX 리버스 프록시까지 갖춘 환경. 그런데 서치콘솔에서 확인한 색인 생성 속도는 형편없었다.">
+  <meta property="og:description" content="광회선 대역폭 문제와 서버 응답 품질, 사이트맵 규격 초과, 리다이렉트 체인을 구분하여 구글봇 크롤링 및 색인 속도를 진단하고 개선한 실전 점검 사례입니다.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://hikari-fiber.store/assets/interior__about__tokyo-fiber__1024x1024__266ff6bfc9682f66.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -33,22 +33,20 @@ nav.pager a, nav.post-pager a, nav[data-site-documents="true"] a { display:inlin
   </header>
   <main>
     <h1>광회선 1Gbps인데 구글 인덱싱 2주 걸릴 때 — 크롤 가속화 실전 점검 기록</h1>
-    <article>
-      <p>3월 초, 동대문 근처 마사지숍 리뉴얼 작업을 맡았을 때였다. 서버 스펙은 나쁘지 않았다. 1Gbps 광회선에 NVMe SSD, NGINX 리버스 프록시까지 갖춘 환경. 그런데 서치콘솔에서 확인한 색인 생성 속도는 형편없었다. 신규 페이지 60건 중 2주 동안 색인된 게 11건뿐이었다.</p>
-<p>바로 "동대문 풋쌤 마사지 테라피" 사이트였다. 클라이언트가 "광회선 바꾸면 해결되는 거 아니냐"고 물었고, 나는 서버 로그부터 뒤지기 시작했다. 대역폭 자체가 병목이 아니었다. 문제는 그 아래층에 있었다.</p>
-<h2>TTFB가 800ms를 넘으면 구글봇은 크롤링 빈도를 줄인다</h2>
-<p>첫 점검 항목은 Time To First Byte. 이건 대역폭이 아니라 서버 처리 능력의 영역이다. 해당 사이트의 응답 시간을 측정하니 평균 1.2초. 구글봇은 보통 2~3초 내 응답을 기대하고, 그 이상이면 접근 빈도를 급격히 낮춘다. PHP 핫업로드와 OPcache 설정을 만진 후 TTFB를 340ms까지 끌어내렸다. 여기서 한 가지 짚고 갈 게 있는데, TTFB는 측정 시점에 따라 0.3초 이상 편차가 생긴다. 최소 10회 측정평균을 잡아야 한다.</p>
-<h2>sitemap.xml 용량이 50MB를 넘으면 색인 우선순위에서 밀린다</h2>
-<p>스itemap 파일 용량이 52MB로 확인됐다. 구글은 한 번에 처리하는 sitemap에 실질적 상한이 있고, 초과분은 즉시 후순위로 밀린다. 카테고리별로 10MB 이하 분할 후, 인덱스 sitemap에서 각 서브맵을 참조하는 구조로 전환했다. 이 변경만으로 색인 요청 수가 3배 늘었다.</p>
-<h2>robots.txt가 핵심 크롤링 경로를 차단하고 있었다</h2>
-<p>robots.txt를 보니 /wp-admin/뿐 아니라 /category/, /tag/까지 Disallow 처리돼 있었다. 의도는 보안이었지만 결과적으로 구글봇이 사이트 구조를 파악하는 경로를 막은 셈이 됐다. 태그와 카테고리 페이지에 noindex를 걸고 robots.txt에서는 허용하는 방식으로 전환했더니, 크롤링 샘플 수가 다음 주에 바로 올랐다.</p>
-<h2>서버 로그에서 크롤러Budget 낭비 구간을 잡아낸다</h2>
-<p>/access.log에서 Googlebot 요청 패턴을 분석했다. 404 응답이 전체의 18%. 존재하지 않는 페이지로 유입되는 크롤링 예산이 과도하게 소진되고 있었던 것. 깨진 내부 링크 230건 수정, 404에 대한 301 리다이렉트 설정을 완료했다. 여기서 주의할 게 있는데, 무조건 301을 걸면 안 된다. 리다이렉트 체인이 3단계 이상 이어지면 구글봇은 체인 중간에서 크롤링을 포기한다.</p>
-<h2>대역폭이 문제 아니면 응답 본문의 압축 효율을 의심하라</h2>
-<p>최종 조치는 Content-Length 헤더 최적화, gzip 압축률 조정, 캐시 헤더 설정이었다. gzip 비율을 72%까지 끌어올리니 한 세션당 처리 페이지 수가 4건에서 14건으로 늘었다. 대역폭은 그대로인데 처리 효율만 올린 셈이다. brotli 압축을 쓸 수 있는 환경이라면 gzip 대체를 권하지만, 서버 OS가 Ubuntu 18.04 이하라면 모듈 호환성 이슈가 먼저 해결돼야 한다.</p>
-<p>2주 뒤 서치콘솔 색인율은 87%. 서버 스펙 업그레이드 대신 로그 한 줄 한 줄 파고들었을 때만 가능한 수치다. 크롤링 속도는 결국 대역폭의 문제가 아니라 서버가 뱉어내는 응답 품질과 구조적 복잡도의 문제다.</p>
-<p><a href="https://mr-footmassage.com/" target="_blank" rel="noopener noreferrer">동대문 풋쌤 마사지 테라피</a></p>
-    </article>
+    <article><p>3월 초, 동대문 근처 마사지숍 리뉴얼 작업을 맡았을 때였다. 서버 스펙은 나쁘지 않았다. 1Gbps 광회선에 NVMe SSD, NGINX 리버스 프록시까지 갖춘 환경. 그런데 서치콘솔에서 확인한 색인 생성 속도는 기대에 못 미쳤다. 신규 페이지 60건 중 2주 동안 색인된 게 11건뿐이었다.</p>
+<p>당시 작업 대상은 동대문 마사지 테라피 사이트였다. 클라이언트가 "회선을 더 빠른 광회선으로 바꾸면 인덱싱이 바로 해결되는 거 아니냐"고 물었고, 나는 서버 로그와 응답 헤더부터 파헤치기 시작했다. 인터넷 대역폭 자체가 병목이 아니었다. 문제는 애플리케이션과 서버 응답 구조에 있었다.</p>
+<h2>TTFB(응답 대기 시간) 최적화와 크롤러 반응</h2>
+<p>첫 점검 항목은 Time To First Byte(TTFB)였다. 이는 광회선 대역폭보다 서버의 첫 응답 처리 능력에 좌우된다. 해당 사이트의 초기 응답 시간을 측정하니 평균 1.2초 수준이었다. 구글 공식 문서에 따르면 크롤링 속도는 서버의 응답 상태와 자원 여유에 영향받는다. 특정 수치 미만이 구글의 절대적 규칙으로 작용하는 것은 아니지만, 이 사례에서는 800ms를 넘는 응답을 내가 점검할 대상으로 잡았다. 이 숫자가 Google의 크롤 중단 기준이라는 뜻은 아니다. PHP 설정과 OPcache 조정을 거쳐 TTFB를 340ms까지 낮췄다. 측정 위치·캐시·시각이 바뀌면 응답 시간도 달라진다. 나는 같은 조건에서 반복 측정해 변화의 폭과 평균을 함께 남겼다. 횟수나 흔들리는 폭을 모든 서버의 고정 기준으로 쓰지는 않는다.</p>
+<h2>sitemap.xml 50MB 한도와 규격 준수</h2>
+<p>점검 중 sitemap.xml 파일 용량이 52MB로 확인됐다. 구글의 사이트맵 공식 규격상 단일 사이트맵 파일은 비압축 기준 50MB 또는 50,000개 URL을 초과할 수 없다. 50MB를 넘어서는 것은 단순한 순위 문제가 아니라 크롤러의 파싱 규격을 위반하여 처리가 제한되는 문제다. 카테고리별로 10MB 이하 분할 후 인덱스 사이트맵 구조로 전환하자 크롤러의 사이트맵 탐색이 정상화되었다.</p>
+<h2>robots.txt 차단 해제와 크롤링 경로 확보</h2>
+<p>robots.txt를 확인해 보니 /wp-admin/뿐만 아니라 /category/, /tag/ 경로까지 Disallow 처리되어 있었다. 사이트 구조와 문맥을 전달하는 분류 페이지까지 차단된 상태였다. 태그와 카테고리 페이지에 noindex 태그를 적용하고 robots.txt에서는 접근을 허용하는 방식으로 전환하여, 크롤러가 전체 구조를 수집하면서도 중복 색인은 방지하도록 개선했다.</p>
+<h2>404 에러와 리다이렉트 체인에 의한 크롤 예산 소모</h2>
+<p>서버 접속 로그(/access.log)를 분석한 결과, 404 에러 응답이 전체 구글봇 요청의 18%를 차지하고 있었다. 존재하지 않는 유실 경로로 크롤링 요청이 낭비되고 있었던 셈이다. 깨진 내부 링크 230건을 수정하고 필요한 경로에는 301 리다이렉트를 설정했다. 이 사례의 긴 리다이렉트 체인은 가능한 곳에서 최종 목적지로 바로 연결했다. Google은 긴 체인을 줄이라고 안내하지만, 3단계가 되면 반드시 수집을 중단한다는 규칙으로 이해하지 않는다.</p>
+<h2>응답 본문 압축과 효율성 강화</h2>
+<p>최종 조치로 gzip 압축 효율 향상 및 캐시 헤더 설정을 진행했다. gzip 압축률을 72% 수준까지 조정하여 전송 데이터량을 줄였으며, 세션당 크롤링 처리 효율이 확연히 개선되었다. 브로틀리(Brotli) 압축 도입도 검토했으나 운영 OS 환경에 따른 모듈 호환성을 먼저 점검해야 한다.</p>
+<p>작업 2주 뒤 서치콘솔 기준 색인율은 87%까지 상승했다. 인프라 대역폭 확장이 아니라 서버 응답 속도, 사이트맵 규격, 링크 구조 개선을 통해 해결한 사례다. 크롤링과 색인은 대역폭 단독의 문제가 아니라 서버가 제공하는 응답 품질과 구조의 문제임을 확인시켜 준 경험이었다.</p>
+<p>본 실전 사례의 대상이 된 마사지숍의 이용 안내 및 예약 정보는 <a href="https://mr-footmassage.com/" target="_blank" rel="noopener noreferrer">동대문 풋쌤 마사지 테라피</a>에서 상세히 확인할 수 있다.</p></article>
       <nav class="post-pager" aria-label="글 이동">
       <a class="post-pager__prev" href="guide-004-162dfdt.html">← 대역폭 10배 늘려도 크롤 속도 안 변하는 이유</a>
       <a class="post-pager__index" href="../posts.html">글 목록</a>
